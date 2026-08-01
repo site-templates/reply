@@ -1,0 +1,46 @@
+# The visual editor's contract for components/nav.blade.php — these fields
+# surface under the Layout tab. Field names are camelCase, matching the props
+# they fill. The link list is site-wide, so it lives in site.json.
+title: Header
+description: The logo, the main navigation, sign-in, and the primary call to action
+fields:
+    brand:
+        type: text
+        label: Wordmark
+        default: "Reply"
+    links:
+        type: repeater
+        label: Navigation links
+        source: site.nav_links
+        add_button_label: "Add link"
+        item_label: text
+        sub_fields:
+            text:
+                type: text
+                label: Text
+                default: "New page"
+            url:
+                type: url
+                label: Link
+                default: "/"
+    current:
+        type: text
+        label: Current path
+        description: Set per page from the layout — the matching link takes the underline.
+        default: "/"
+    signInText:
+        type: text
+        label: Sign-in text
+        default: "Sign in"
+    signInLink:
+        type: url
+        label: Sign-in link
+        default: "mailto:hello@reply.support"
+    ctaText:
+        type: text
+        label: Button text
+        default: "Start free"
+    ctaLink:
+        type: url
+        label: Button link
+        default: "/pricing"

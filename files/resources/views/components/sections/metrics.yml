@@ -1,0 +1,50 @@
+# A pull quote and three figures. The quote is set in the display face at
+# section-heading size, so keep it to two or three sentences — much longer and
+# it stops reading as a quote and starts reading as a paragraph.
+title: Quote and figures
+description: One large customer quote over three figures divided by hairline rules
+fields:
+    quote:
+        type: textarea
+        label: Quote
+        rows: 4
+        default: "We stopped hiring for the queue. Reply cleared the overnight backlog in the first week, and my team spends their mornings on the conversations that actually need them."
+    name:
+        type: text
+        label: Name
+        default: "Maya Ellis"
+    role:
+        type: text
+        label: Role
+        default: "Head of Support, Fernwood"
+    showLink:
+        type: toggle
+        label: Show the story link
+        default: "1"
+    linkText:
+        type: text
+        label: Link text
+        default: "Read the Fernwood story"
+    linkUrl:
+        type: url
+        label: Link
+        default: "/customer/fernwood"
+    items:
+        type: repeater
+        label: Figures
+        source: stats
+        add_button_label: "Add figure"
+        item_label: figure
+        sub_fields:
+            figure:
+                type: text
+                label: Figure
+                default: "00%"
+            label:
+                type: text
+                label: Label
+                default: "What this measures"
+            note:
+                type: text
+                label: Small print
+                default: "how it was measured"

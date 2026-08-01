@@ -1,0 +1,46 @@
+# The numbered feature list. Three bullets per row is the shape the layout is
+# built for — the third column looks thin with fewer.
+title: Numbered feature list
+description: Wide hairline-divided rows, each with a large numeral, a description, and three points
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "The work"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "Five jobs, done before anyone opens the inbox."
+    items:
+        type: repeater
+        label: Rows
+        source: useCases
+        add_button_label: "Add row"
+        item_label: title
+        sub_fields:
+            eyebrow:
+                type: text
+                label: Row label
+                default: "Category"
+            title:
+                type: text
+                label: Title
+                default: "What this does"
+            body:
+                type: textarea
+                label: Body
+                rows: 4
+                default: "Two or three sentences on what changes for the person doing this job today."
+            pointOne:
+                type: text
+                label: First point
+                default: "The first specific"
+            pointTwo:
+                type: text
+                label: Second point
+                default: "The second specific"
+            pointThree:
+                type: text
+                label: Third point
+                default: "The third specific"

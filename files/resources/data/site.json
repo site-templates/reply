@@ -1,0 +1,34 @@
+{
+    "name": "Reply",
+    "tagline": "The help desk that answers first.",
+    "theme": {
+        "palette": "linen",
+        "fonts": "fraunces-hanken",
+        "fonts_url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..640;1,9..144,400..640&family=Hanken+Grotesk:wght@400..700&family=DM+Mono:wght@400;500&display=swap",
+        "appearance": "light",
+        "appearance_class": ""
+    },
+    "nav_links": [
+        { "text": "Features", "url": "/features" },
+        { "text": "Pricing", "url": "/pricing" },
+        { "text": "Customers", "url": "/customers" },
+        { "text": "Changelog", "url": "/changelog" }
+    ],
+    "footer_product": [
+        { "text": "Features", "url": "/features" },
+        { "text": "Pricing", "url": "/pricing" },
+        { "text": "Changelog", "url": "/changelog" },
+        { "text": "Status", "url": "/changelog" }
+    ],
+    "footer_company": [
+        { "text": "Customers", "url": "/customers" },
+        { "text": "Careers", "url": "/customers" },
+        { "text": "Contact", "url": "mailto:hello@reply.support" },
+        { "text": "404", "url": "/404" }
+    ],
+    "social_links": [
+        { "text": "LinkedIn", "url": "https://www.linkedin.com" },
+        { "text": "GitHub", "url": "https://github.com" },
+        { "text": "Bluesky", "url": "https://bsky.app" }
+    ]
+}

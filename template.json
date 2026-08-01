@@ -1,0 +1,22 @@
+{
+    "name": "Reply",
+    "dialect": "blade",
+    "description": "A warm, cream-canvas SaaS site for a help desk with an AI teammate — a markup-built inbox floating on painterly wildflower fields, a live resolution ticker on the one dark band, editorial feature rows, a no-JavaScript pricing toggle, and customer stories on dynamic pages.",
+    "icon": "💬",
+    "repo": "https://github.com/site-templates/reply",
+    "order": 21,
+    "category": "landing",
+    "theme": "light",
+    "accent": "#191713",
+    "themeable": true,
+    "palette": "linen",
+    "fonts": "fraunces-hanken",
+    "appearance": "light",
+    "pages": [
+        "Home",
+        "Features",
+        "Pricing",
+        "Customers",
+        "Changelog"
+    ]
+}

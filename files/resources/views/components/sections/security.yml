@@ -1,0 +1,47 @@
+# The second ink band. Keep the two dark sections far apart on a page — back
+# to back they read as one long slab and the cream canvas loses its job.
+title: Security band
+description: A dark band with sticky copy beside a hairline list of guarantees
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Security"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "Built to survive your security review."
+    body:
+        type: textarea
+        label: Supporting copy
+        rows: 4
+        default: "We have been through enough of them to know what your compliance team is going to ask. The answers are all yes, and the evidence is ready."
+    showCta:
+        type: toggle
+        label: Show the button
+        default: "1"
+    ctaText:
+        type: text
+        label: Button text
+        default: "Request the SOC 2 report"
+    ctaLink:
+        type: url
+        label: Button link
+        default: "mailto:hello@reply.support"
+    items:
+        type: repeater
+        label: Guarantees
+        source: safeguards
+        add_button_label: "Add guarantee"
+        item_label: title
+        sub_fields:
+            title:
+                type: text
+                label: Title
+                default: "A new guarantee"
+            body:
+                type: textarea
+                label: Body
+                rows: 3
+                default: "One sentence a compliance reviewer would accept without a follow-up email."

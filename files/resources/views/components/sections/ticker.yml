@@ -1,0 +1,62 @@
+# The resolution ticker — the page's one dark moment, and the second of the
+# two signature elements. Keep the question short: it types itself on one line
+# and a long question will clip on a phone.
+title: Resolution ticker
+description: The ink band where a question types itself in and Reply answers, live
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Watch it work"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "A question at 2am, answered at 2am."
+    body:
+        type: textarea
+        label: Supporting copy
+        rows: 3
+        default: "This is a real shape of conversation, at real speed. Nobody was awake for it."
+    channelLabel:
+        type: text
+        label: Channel label
+        default: "Live chat"
+    customerName:
+        type: text
+        label: Customer name
+        default: "Anika Lubin"
+    customerInitials:
+        type: text
+        label: Customer initials
+        default: "AL"
+    question:
+        type: text
+        label: The question
+        description: Types itself out one character at a time — keep it to one short line.
+        default: "My order arrived with a cracked lid."
+    agentName:
+        type: text
+        label: Answering as
+        default: "Reply"
+    answer:
+        type: textarea
+        label: The answer
+        rows: 4
+        default: "I can see order #2847 — sorry about that. A replacement lid is on its way and arrives Thursday; there is nothing to send back. I have also flagged the batch for the packaging team."
+    stampText:
+        type: text
+        label: Resolution stamp
+        default: "Resolved in 4 seconds"
+    stampNote:
+        type: text
+        label: Stamp note
+        default: "No agent touched this conversation"
+    ctaText:
+        type: text
+        label: Link text
+        default: "See what it would clear for you"
+    ctaLink:
+        type: url
+        label: Link
+        default: "/pricing"

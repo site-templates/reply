@@ -1,0 +1,102 @@
+# The plan cards. Exactly one plan should be marked featured — it is the only
+# card that carries a painting, and two of them cancels the point.
+title: Pricing plans
+description: A no-JavaScript billing toggle over three plan cards, the featured one carrying a painting
+fields:
+    showToggle:
+        type: toggle
+        label: Show the billing toggle
+        default: "1"
+    monthlyLabel:
+        type: text
+        label: Monthly label
+        default: "Monthly"
+    yearlyLabel:
+        type: text
+        label: Yearly label
+        default: "Yearly"
+    saveLabel:
+        type: text
+        label: Saving badge
+        default: "save 15%"
+    includesLabel:
+        type: text
+        label: Feature list heading
+        default: "Includes"
+    featureImage:
+        type: image
+        label: Featured card painting
+        default: "/images/bloom.jpg"
+    featureImageAlt:
+        type: text
+        label: Painting alt text
+        default: "A painterly stand of white wildflowers rising through sage grasses"
+    items:
+        type: repeater
+        label: Plans
+        source: plans
+        add_button_label: "Add plan"
+        item_label: name
+        sub_fields:
+            name:
+                type: text
+                label: Plan name
+                default: "New plan"
+            priceMonthly:
+                type: text
+                label: Monthly price
+                default: "$0"
+            priceYearly:
+                type: text
+                label: Yearly price (per month)
+                default: "$0"
+            period:
+                type: text
+                label: Period suffix
+                default: "/month"
+            summary:
+                type: textarea
+                label: Who it is for
+                rows: 3
+                default: "One line naming the team this plan is the right size for."
+            featured:
+                type: toggle
+                label: Featured
+                default: "0"
+            ribbon:
+                type: text
+                label: Ribbon text
+                default: "Most teams"
+            ctaText:
+                type: text
+                label: Button text
+                default: "Start free"
+            ctaLink:
+                type: url
+                label: Button link
+                default: "/pricing"
+            featureOne:
+                type: text
+                label: Feature 1
+                default: "The headline limit"
+            featureTwo:
+                type: text
+                label: Feature 2
+                default: "The second thing"
+            featureThree:
+                type: text
+                label: Feature 3
+                default: "The third thing"
+            featureFour:
+                type: text
+                label: Feature 4
+                default: "The fourth thing"
+            featureFive:
+                type: text
+                label: Feature 5
+                default: "The fifth thing"
+            featureSix:
+                type: text
+                label: Feature 6
+                description: Leave empty to show five.
+                default: ""

@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Solo",
+        "priceMonthly": "$0",
+        "priceYearly": "$0",
+        "period": "/month",
+        "summary": "For a small team seeing what a week of answered mornings feels like.",
+        "featured": "",
+        "ribbon": "",
+        "ctaText": "Start free",
+        "ctaLink": "/pricing",
+        "featureOne": "100 resolutions a month",
+        "featureTwo": "One channel",
+        "featureThree": "Connect your help centre",
+        "featureFour": "Handover to your team",
+        "featureFive": "Email support",
+        "featureSix": ""
+    },
+    {
+        "name": "Team",
+        "priceMonthly": "$49",
+        "priceYearly": "$41",
+        "period": "/month",
+        "summary": "For a support team carrying real volume every single day.",
+        "featured": "1",
+        "ribbon": "Most teams",
+        "ctaText": "Start free trial",
+        "ctaLink": "/pricing",
+        "featureOne": "2,000 resolutions a month",
+        "featureTwo": "Every channel — email, chat, WhatsApp, social",
+        "featureThree": "Auto-triage and routing",
+        "featureFour": "Live reporting and CSAT",
+        "featureFive": "Stale-answer alerts",
+        "featureSix": "Priority support"
+    },
+    {
+        "name": "Scale",
+        "priceMonthly": "Custom",
+        "priceYearly": "Custom",
+        "period": "",
+        "summary": "For high volume, several brands, and a security review to get through.",
+        "featured": "",
+        "ribbon": "",
+        "ctaText": "Talk to us",
+        "ctaLink": "mailto:hello@reply.support",
+        "featureOne": "Everything in Team",
+        "featureTwo": "Unlimited resolutions",
+        "featureThree": "SSO and role-based access",
+        "featureFour": "Data residency and a signed SLA",
+        "featureFive": "Multiple brands and workspaces",
+        "featureSix": "A named person who knows your account"
+    }
+]

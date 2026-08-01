@@ -1,0 +1,26 @@
+[
+    {
+        "question": "How is this different from a chatbot bolted onto a help desk?",
+        "answer": "A bot guesses from whatever it read on the internet and then hands you a transcript. Reply reads your help centre and your closed tickets, answers with your actual refund window and your actual shipping partner, and finishes the job — issuing the replacement, sending the label, closing the ticket."
+    },
+    {
+        "question": "How much can it really resolve on its own?",
+        "answer": "Most teams land between half and three quarters of inbound volume, because most inbound volume is the same twenty questions. Order status, password resets, address changes, and refunds go first. Anything with judgement in it stays with your team."
+    },
+    {
+        "question": "What happens to a question it can't answer?",
+        "answer": "It stops. Reply hands the conversation to whoever owns that queue with a two-line summary, the customer's history, and a suggested reply your agent can edit or throw away. It never bluffs and it never loops the customer."
+    },
+    {
+        "question": "Where does it learn from?",
+        "answer": "Your help centre, your past tickets, and any documents you upload. You can see every source behind an answer, and you can retire a source the moment it goes stale."
+    },
+    {
+        "question": "Is our customer data used to train public models?",
+        "answer": "No. Your data trains your workspace and nothing else. It is encrypted in transit and at rest, it is never pooled with another customer's, and you can export or delete all of it on any plan."
+    },
+    {
+        "question": "Can we start free and move up later?",
+        "answer": "Yes, and most teams do. The free plan is a real plan, not a trial — connect one channel, wire up your docs, and see what a week looks like. Upgrading takes a click and nothing is re-imported."
+    }
+]

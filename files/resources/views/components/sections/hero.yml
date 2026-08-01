@@ -1,0 +1,180 @@
+# The hero, and the inbox canvas that is Reply's signature. Everything the
+# canvas shows is editable: the rail, the conversation list, and the thread are
+# repeaters backed by collections, so a site owner can make the mock show their
+# own product without touching markup.
+title: Hero
+description: The headline, the two calls to action, and the markup-built inbox canvas on its painterly field
+fields:
+    showNotice:
+        type: toggle
+        label: Show the announcement pill
+        default: "1"
+    noticeLabel:
+        type: text
+        label: Pill badge
+        default: "New"
+    noticeText:
+        type: text
+        label: Pill text
+        default: "Auto-resolution is live on every plan"
+    noticeLink:
+        type: url
+        label: Pill link
+        default: "/changelog"
+    heading:
+        type: textarea
+        label: Headline
+        rows: 2
+        default: "Support that answers before you wake up."
+    body:
+        type: textarea
+        label: Supporting copy
+        rows: 4
+        default: "Reply is a help desk with an AI teammate built in. It resolves the routine questions the moment they arrive — and hands you the ones that actually need a person."
+    ctaText:
+        type: text
+        label: Primary button text
+        default: "Start free"
+    ctaLink:
+        type: url
+        label: Primary button link
+        default: "/pricing"
+    secondaryText:
+        type: text
+        label: Secondary button text
+        default: "See how it works"
+    secondaryLink:
+        type: url
+        label: Secondary button link
+        default: "/features"
+    footnote:
+        type: text
+        label: Footnote under the buttons
+        default: "Free forever on one channel. No card, no sales call."
+    image:
+        type: image
+        label: Backdrop painting
+        description: The field the inbox floats on. Landscape, roughly 16:9.
+        default: "/images/hero.jpg"
+    imageAlt:
+        type: text
+        label: Backdrop alt text
+        default: "A painterly meadow of white cosmos wildflowers under a pale blue sky"
+    inboxTitle:
+        type: text
+        label: Canvas title
+        default: "Inbox"
+    searchPlaceholder:
+        type: text
+        label: Canvas search text
+        default: "Search conversations"
+    threadSubject:
+        type: text
+        label: Conversation subject
+        default: "Order #2847 · Replacement"
+    threadBadge:
+        type: text
+        label: Conversation badge
+        default: "Resolved by Reply"
+    resolvedNote:
+        type: text
+        label: Resolution stamp
+        default: "Resolved in 4s"
+    sourcesNote:
+        type: text
+        label: Cited sources line
+        default: "Warranty policy · Returns"
+    navItems:
+        type: repeater
+        label: Canvas rail
+        source: inboxNav
+        add_button_label: "Add rail item"
+        item_label: label
+        sub_fields:
+            label:
+                type: text
+                label: Label
+                default: "Inbox"
+            icon:
+                type: select
+                label: Glyph
+                default: "inbox"
+                options:
+                    inbox: Inbox
+                    ticket: Ticket
+                    book: Knowledge
+                    chart: Chart
+                    gear: Settings
+            active:
+                type: toggle
+                label: Highlighted
+                default: "0"
+            badge:
+                type: text
+                label: Count badge
+                default: ""
+    threads:
+        type: repeater
+        label: Conversation list
+        source: inboxThreads
+        add_button_label: "Add conversation"
+        item_label: name
+        sub_fields:
+            initials:
+                type: text
+                label: Initials
+                default: "AB"
+            name:
+                type: text
+                label: Name
+                default: "New customer"
+            snippet:
+                type: text
+                label: Preview line
+                default: "A question about an order"
+            time:
+                type: text
+                label: Time
+                default: "now"
+            state:
+                type: select
+                label: State
+                default: "done"
+                options:
+                    live: Waiting
+                    done: Resolved
+            active:
+                type: toggle
+                label: Selected
+                default: "0"
+    messages:
+        type: repeater
+        label: Conversation messages
+        source: inboxMessages
+        add_button_label: "Add message"
+        item_label: author
+        sub_fields:
+            author:
+                type: text
+                label: Author
+                default: "Reply"
+            initials:
+                type: text
+                label: Initials
+                default: "AB"
+            time:
+                type: text
+                label: Time
+                default: "02:47"
+            body:
+                type: textarea
+                label: Message
+                rows: 3
+                default: "Happy to help with that."
+            side:
+                type: select
+                label: Who is speaking
+                default: "agent"
+                options:
+                    customer: The customer
+                    agent: Reply

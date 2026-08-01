@@ -1,0 +1,26 @@
+# The page shell — <head>, the header, and the footer. These fields surface
+# under the Layout tab; each page sets its own title, description, and which
+# nav link is marked current on its <x-layouts.main> tag.
+title: Page layout
+description: The document shell every page renders inside
+fields:
+    title:
+        type: text
+        label: Page title
+        description: Shown in the browser tab, before the site name.
+        default: "Home"
+    description:
+        type: textarea
+        label: Meta description
+        description: The one-line summary search engines show.
+        rows: 3
+        default: ""
+    current:
+        type: text
+        label: Current nav path
+        description: The nav link matching this page gets an underline. Use the link's exact URL.
+        default: "/"
+    showFooter:
+        type: toggle
+        label: Show the footer
+        default: "1"

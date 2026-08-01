@@ -1,0 +1,42 @@
+# The connections plate. Cells are divided by hairlines rather than gaps, so
+# the count should stay a multiple of three to keep the bottom row square.
+title: Integrations
+description: A hairline-divided grid of the tools Reply connects to
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Connections"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "It plugs into the stack you already argue about."
+    body:
+        type: textarea
+        label: Supporting copy
+        rows: 3
+        default: "Reply reads the order, the charge, and the account from wherever they live, so an answer can be specific instead of apologetic."
+    footnote:
+        type: text
+        label: Footnote
+        default: "Missing something? Everything here is also available over a documented REST API."
+    items:
+        type: repeater
+        label: Integrations
+        source: integrations
+        add_button_label: "Add integration"
+        item_label: name
+        sub_fields:
+            name:
+                type: text
+                label: Name
+                default: "New tool"
+            category:
+                type: text
+                label: Category
+                default: "Category"
+            note:
+                type: text
+                label: One-line note
+                default: "What connecting it gets you"

@@ -1,0 +1,6 @@
+[
+    { "question": "What counts as a resolution?", "answer": "A conversation Reply closed on its own, with no agent reply. Handovers, follow-ups, and anything a person touched are free." },
+    { "question": "What happens if we go over?", "answer": "Nothing breaks. Reply keeps answering and the overage appears on your next invoice at the same per-resolution rate. We email you at eighty per cent so it is never a surprise." },
+    { "question": "Is there a per-agent charge?", "answer": "No. Invite the whole company if you like — billing follows resolutions, not seats, because the point is fewer people in the queue." },
+    { "question": "Can we cancel whenever?", "answer": "Yes. No contracts, no notice period. Cancel from the billing page and export everything on your way out." }
+]

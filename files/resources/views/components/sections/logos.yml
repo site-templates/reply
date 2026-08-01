@@ -1,0 +1,25 @@
+# The customer marquee. Names rather than logos, deliberately — a wall of
+# mismatched grey wordmarks is the fastest way to make a premium page look
+# like a template.
+title: Customer marquee
+description: A scrolling band of customer names between the hero and the page
+fields:
+    showNote:
+        type: toggle
+        label: Show the label above
+        default: "1"
+    note:
+        type: text
+        label: Label
+        default: "Answering for 1,200 support teams"
+    items:
+        type: repeater
+        label: Customers
+        source: logos
+        add_button_label: "Add customer"
+        item_label: name
+        sub_fields:
+            name:
+                type: text
+                label: Name
+                default: "New customer"

@@ -1,0 +1,44 @@
+[
+    {
+        "version": "2.8",
+        "dateFormatted": "24 July 2026",
+        "title": "Stale-answer alerts",
+        "body": "Change a policy page and Reply now tells you which answers relied on the old version — with the conversations they went out in, so you can follow up before a customer does.",
+        "tag": "New"
+    },
+    {
+        "version": "2.7",
+        "dateFormatted": "2 July 2026",
+        "title": "WhatsApp Business, properly",
+        "body": "Media, templates, and delivery receipts all work now, and a customer's history follows them between WhatsApp and email instead of starting over.",
+        "tag": "New"
+    },
+    {
+        "version": "2.6",
+        "dateFormatted": "11 June 2026",
+        "title": "Confidence thresholds per queue",
+        "body": "Billing can require near-certainty before Reply answers on its own while shipping stays permissive. Set the bar per queue rather than per workspace.",
+        "tag": "Improved"
+    },
+    {
+        "version": "2.5",
+        "dateFormatted": "19 May 2026",
+        "title": "Draft handovers",
+        "body": "Escalated conversations now arrive with a suggested reply attached. Agents accept, edit, or bin it — accepted drafts are marked in reporting so you can see what it is worth.",
+        "tag": "New"
+    },
+    {
+        "version": "2.4",
+        "dateFormatted": "28 April 2026",
+        "title": "Faster first token",
+        "body": "Answers begin streaming in under 400ms at the median, down from 1.3 seconds. Long answers finish about twice as fast as they did in March.",
+        "tag": "Improved"
+    },
+    {
+        "version": "2.3",
+        "dateFormatted": "7 April 2026",
+        "title": "Source citations everywhere",
+        "body": "Every answer now shows the documents behind it, in the inbox and in the customer-facing transcript. Retire a source and dependent answers are re-checked immediately.",
+        "tag": "New"
+    }
+]

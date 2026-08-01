@@ -1,0 +1,70 @@
+# The case-study cards. These rows are the same `stories` collection the
+# dynamic page pages/customer/[stories.slug].blade.php serves, so a row's
+# `link` must stay consistent with its `slug` — /customer/{slug}. Edit the
+# story bodies in the Content editor; the `content` column is richtext.
+title: Story cards
+description: Three case-study cards linking to the dynamic customer story pages
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Case studies"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "Three teams, in detail."
+    readLabel:
+        type: text
+        label: Card link text
+        default: "Read the story"
+    items:
+        type: repeater
+        label: Stories
+        source: stories
+        add_button_label: "Add story"
+        item_label: title
+        sub_fields:
+            title:
+                type: text
+                label: Headline
+                default: "A new customer story"
+            slug:
+                type: text
+                label: Slug
+                description: The URL segment — the page is served at /customer/{slug}.
+                default: "new-story"
+            link:
+                type: url
+                label: Link
+                description: Keep this as /customer/ plus the slug above.
+                default: "/customer/new-story"
+            company:
+                type: text
+                label: Company
+                default: "Company"
+            industry:
+                type: text
+                label: Industry
+                default: "Industry"
+            description:
+                type: textarea
+                label: Card summary
+                rows: 3
+                default: "The one-sentence version of what changed."
+            image:
+                type: image
+                label: Painting
+                default: "/images/resolve.jpg"
+            imageAlt:
+                type: text
+                label: Alt text
+                default: "A painterly meadow"
+            metricFigure:
+                type: text
+                label: Chip figure
+                default: "00%"
+            metricLabel:
+                type: text
+                label: Chip label
+                default: "what it measures"

@@ -1,0 +1,75 @@
+# The footer — three link columns and a closing note. Surfaces under the
+# Layout tab. All three link lists are site-wide and live in site.json.
+title: Footer
+description: The wordmark, a short blurb, three link columns, and the copyright line
+fields:
+    brand:
+        type: text
+        label: Wordmark
+        default: "Reply"
+    blurb:
+        type: textarea
+        label: Blurb
+        rows: 3
+        default: "A help desk with an AI teammate built in. Answers the routine questions the moment they arrive, and hands you the ones that need a person."
+    productLabel:
+        type: text
+        label: First column heading
+        default: "Product"
+    product:
+        type: repeater
+        label: First column links
+        source: site.footer_product
+        add_button_label: "Add link"
+        item_label: text
+        sub_fields:
+            text:
+                type: text
+                label: Text
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "/"
+    companyLabel:
+        type: text
+        label: Second column heading
+        default: "Company"
+    company:
+        type: repeater
+        label: Second column links
+        source: site.footer_company
+        add_button_label: "Add link"
+        item_label: text
+        sub_fields:
+            text:
+                type: text
+                label: Text
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "/"
+    socialLabel:
+        type: text
+        label: Third column heading
+        default: "Elsewhere"
+    social:
+        type: repeater
+        label: Third column links
+        source: site.social_links
+        add_button_label: "Add link"
+        item_label: text
+        sub_fields:
+            text:
+                type: text
+                label: Text
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "https://example.com"
+    note:
+        type: text
+        label: Closing line
+        default: "© 2026 Reply. Built for people who would rather be doing something else."

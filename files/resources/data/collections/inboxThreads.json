@@ -1,0 +1,8 @@
+[
+    { "initials": "EJ", "name": "Emily Jones", "snippet": "Still can't log in after the reset", "time": "now", "state": "live", "active": "" },
+    { "initials": "AL", "name": "Anika Lubin", "snippet": "My headphones won't turn on", "time": "2m", "state": "live", "active": "1" },
+    { "initials": "SJ", "name": "Sarah Johnson", "snippet": "Can I change the shipping address?", "time": "12m", "state": "done", "active": "" },
+    { "initials": "MB", "name": "Michael Brown", "snippet": "Was I charged twice this month?", "time": "28m", "state": "done", "active": "" },
+    { "initials": "DW", "name": "David Wilson", "snippet": "How do I cancel my subscription?", "time": "41m", "state": "done", "active": "" },
+    { "initials": "LW", "name": "Laura White", "snippet": "The discount code isn't applying", "time": "1h", "state": "done", "active": "" }
+]

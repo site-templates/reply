@@ -1,0 +1,92 @@
+# The editorial feature row. Alternate `align` between instances — two rows
+# with the painting on the same side is the fastest way to lose the rhythm the
+# whole page is built on.
+title: Feature row
+description: A half-page painting bleeding off the page edge, a stat card floating on it, and copy opposite
+fields:
+    align:
+        type: select
+        label: Painting side
+        default: "left"
+        options:
+            left: Left
+            right: Right
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Why Reply"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "It gets sharper with every ticket it sees."
+    body:
+        type: textarea
+        label: Body
+        rows: 4
+        default: "Every conversation your team resolves becomes a worked example. Reply picks up the edge cases, the exceptions, and the phrases your customers actually use, so the answers get more accurate the longer it runs."
+    pointOne:
+        type: text
+        label: First bullet
+        default: "Learns from resolved tickets, not just documentation"
+    pointTwo:
+        type: text
+        label: Second bullet
+        default: "Flags the questions your help centre cannot answer"
+    pointThree:
+        type: text
+        label: Third bullet
+        description: Leave empty to show only two.
+        default: ""
+    showCta:
+        type: toggle
+        label: Show the link
+        default: "1"
+    ctaText:
+        type: text
+        label: Link text
+        default: "Read a customer story"
+    ctaLink:
+        type: url
+        label: Link
+        default: "/customers"
+    image:
+        type: image
+        label: Painting
+        default: "/images/learn.jpg"
+    imageAlt:
+        type: text
+        label: Alt text
+        default: "Painterly wild grasses bending in the wind against a soft teal sky"
+    showCard:
+        type: toggle
+        label: Show the floating stat card
+        default: "1"
+    cardTitle:
+        type: text
+        label: Card title
+        default: "Performance"
+    statOneFigure:
+        type: text
+        label: First figure
+        default: "92%"
+    statOneLabel:
+        type: text
+        label: First label
+        default: "Resolution rate"
+    statOneDelta:
+        type: text
+        label: First change line
+        default: "+12% this quarter"
+    statTwoFigure:
+        type: text
+        label: Second figure
+        default: "8,420"
+    statTwoLabel:
+        type: text
+        label: Second label
+        default: "Tickets resolved"
+    statTwoDelta:
+        type: text
+        label: Second change line
+        default: "+18% this quarter"

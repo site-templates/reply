@@ -1,0 +1,72 @@
+# The customer-story shell. Every field here is filled from the matched row of
+# the stories collection by pages/customer/[stories.slug].blade.php, so edit
+# the story itself in the Content editor rather than here.
+title: Customer story layout
+description: The shell one customer story renders inside — header, hero painting, article, and sidebar
+fields:
+    title:
+        type: text
+        label: Headline
+        default: "Customer story"
+    description:
+        type: textarea
+        label: Standfirst
+        rows: 3
+        default: ""
+    company:
+        type: text
+        label: Company
+        default: ""
+    industry:
+        type: text
+        label: Industry
+        default: ""
+    dateFormatted:
+        type: text
+        label: Date
+        default: ""
+    readTime:
+        type: text
+        label: Read time
+        default: ""
+    image:
+        type: image
+        label: Header painting
+        default: "/images/resolve.jpg"
+    imageAlt:
+        type: text
+        label: Alt text
+        default: "A painterly meadow"
+    metricFigure:
+        type: text
+        label: Headline figure
+        default: ""
+    metricLabel:
+        type: text
+        label: Figure label
+        default: ""
+    quote:
+        type: textarea
+        label: Sidebar quote
+        rows: 4
+        default: ""
+    quoteName:
+        type: text
+        label: Quote name
+        default: ""
+    quoteRole:
+        type: text
+        label: Quote role
+        default: ""
+    backText:
+        type: text
+        label: Back link text
+        default: "All customer stories"
+    backLink:
+        type: url
+        label: Back link
+        default: "/customers"
+    moreLabel:
+        type: text
+        label: Sidebar list heading
+        default: "More stories"

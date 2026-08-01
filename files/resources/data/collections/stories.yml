@@ -1,0 +1,20 @@
+# Column types for the customer stories collection. The Content editor and any
+# repeater bound to `stories` read this file — `content` must be declared
+# richtext so the story body opens in the rich editor rather than a text box.
+fields:
+    title: text
+    slug: text
+    link: url
+    company: text
+    industry: text
+    description: textarea
+    dateFormatted: text
+    readTime: text
+    image: image
+    imageAlt: text
+    metricFigure: text
+    metricLabel: text
+    quote: textarea
+    quoteName: text
+    quoteRole: text
+    content: richtext

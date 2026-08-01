@@ -1,0 +1,42 @@
+[
+    {
+        "eyebrow": "Triage",
+        "title": "Every ticket sorted the moment it lands",
+        "body": "Reply tags each conversation by topic, urgency, and intent before anyone opens it, then routes it to the queue that owns it. Your morning starts with a sorted inbox instead of a pile.",
+        "pointOne": "Topic, sentiment, and intent on arrival",
+        "pointTwo": "Ranked by customer impact, not arrival time",
+        "pointThree": "Routed to the right queue automatically"
+    },
+    {
+        "eyebrow": "Knowledge",
+        "title": "One source of truth, kept honest",
+        "body": "Every answer cites the document behind it. When a policy changes, Reply flags the answers that relied on the old one so nothing quietly goes stale in the background.",
+        "pointOne": "Cited sources on every reply",
+        "pointTwo": "Stale-answer alerts when a doc changes",
+        "pointThree": "Gap reports for questions your docs can't answer"
+    },
+    {
+        "eyebrow": "Escalation",
+        "title": "Handovers that don't lose the thread",
+        "body": "When Reply steps back, your agent gets the conversation summarised, the order and account already open, and a draft reply to accept or rewrite. No scrolling, no re-reading.",
+        "pointOne": "Two-line summary and full history",
+        "pointTwo": "Suggested reply, always editable",
+        "pointThree": "Confidence thresholds you set per queue"
+    },
+    {
+        "eyebrow": "Reporting",
+        "title": "Numbers your finance team will believe",
+        "body": "Resolution rate, cost per ticket, and CSAT split by whether a human touched it. Export it, schedule it, or drop it straight into the weekly review.",
+        "pointOne": "Resolution and deflection by topic",
+        "pointTwo": "CSAT split by human versus Reply",
+        "pointThree": "Scheduled exports to email or Slack"
+    },
+    {
+        "eyebrow": "Channels",
+        "title": "The same answer wherever they ask",
+        "body": "Email, live chat, WhatsApp, and social all land in one inbox and get the same policy applied. Your customers stop getting three different answers to one question.",
+        "pointOne": "Email, chat, WhatsApp, and social",
+        "pointTwo": "One policy, applied everywhere",
+        "pointThree": "Full history follows the customer across channels"
+    }
+]

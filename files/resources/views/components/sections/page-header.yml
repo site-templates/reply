@@ -1,0 +1,39 @@
+# The opening block on an inner page. Left is the default so inner pages do
+# not all begin with a centred stack; use centre where the page is genuinely
+# symmetrical (pricing).
+title: Page header
+description: The eyebrow, page title, and optional intro that open an inner page
+fields:
+    align:
+        type: select
+        label: Alignment
+        default: "left"
+        options:
+            left: Left, with the intro opposite
+            center: Centred
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Features"
+    heading:
+        type: textarea
+        label: Page title
+        rows: 2
+        default: "Everything Reply does, in one quiet inbox."
+    body:
+        type: textarea
+        label: Intro
+        rows: 4
+        default: ""
+    showCta:
+        type: toggle
+        label: Show the button
+        default: "0"
+    ctaText:
+        type: text
+        label: Button text
+        default: ""
+    ctaLink:
+        type: url
+        label: Button link
+        default: "/pricing"

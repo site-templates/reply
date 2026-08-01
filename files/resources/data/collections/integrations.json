@@ -1,0 +1,14 @@
+[
+    { "name": "Gmail", "category": "Inbox", "note": "Two-way sync, threads preserved" },
+    { "name": "Outlook", "category": "Inbox", "note": "Shared mailboxes and aliases" },
+    { "name": "Slack", "category": "Team", "note": "Escalations land in your channel" },
+    { "name": "Shopify", "category": "Commerce", "note": "Orders, refunds, and returns inline" },
+    { "name": "Stripe", "category": "Billing", "note": "Charges and invoices on the ticket" },
+    { "name": "WhatsApp", "category": "Channel", "note": "Business API, media supported" },
+    { "name": "Intercom", "category": "Migration", "note": "Import conversations and macros" },
+    { "name": "Zendesk", "category": "Migration", "note": "Import tickets and help centre" },
+    { "name": "Notion", "category": "Knowledge", "note": "Pages sync as sources" },
+    { "name": "Linear", "category": "Engineering", "note": "File a bug from a ticket" },
+    { "name": "HubSpot", "category": "CRM", "note": "Contact context on arrival" },
+    { "name": "Zapier", "category": "Anything else", "note": "Six hundred more, no code" }
+]

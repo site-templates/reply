@@ -1,0 +1,53 @@
+# The release timeline. Newest first — entries render in the order they sit in
+# the collection, there is no sorting at render time.
+title: Changelog timeline
+description: Dated releases in a left-rail timeline
+fields:
+    showSubscribe:
+        type: toggle
+        label: Show the subscribe line
+        default: "1"
+    subscribeText:
+        type: text
+        label: Subscribe line
+        default: "Every release, in your inbox, once a month."
+    subscribeLinkText:
+        type: text
+        label: Subscribe link text
+        default: "Subscribe"
+    subscribeLink:
+        type: url
+        label: Subscribe link
+        default: "mailto:hello@reply.support"
+    items:
+        type: repeater
+        label: Releases
+        source: releases
+        add_button_label: "Add release"
+        item_label: title
+        sub_fields:
+            version:
+                type: text
+                label: Version
+                default: "1.0"
+            dateFormatted:
+                type: text
+                label: Date
+                default: "1 January 2026"
+            title:
+                type: text
+                label: Title
+                default: "What shipped"
+            body:
+                type: textarea
+                label: Body
+                rows: 4
+                default: "What changed, and what it means for somebody using it on Monday."
+            tag:
+                type: select
+                label: Tag
+                default: "New"
+                options:
+                    New: New
+                    Improved: Improved
+                    Fixed: Fixed

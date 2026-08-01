@@ -1,0 +1,46 @@
+# The FAQ. The heading column sticks while the answers scroll past it on wide
+# screens, which is what lets the section stay narrow and still fill the page.
+title: FAQ
+description: A sticky heading beside a column of expanding questions
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Questions"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "The things people ask before they trust it."
+    showContact:
+        type: toggle
+        label: Show the contact line
+        default: "1"
+    contactText:
+        type: text
+        label: Contact line
+        default: "Something else on your mind?"
+    contactLinkText:
+        type: text
+        label: Contact link text
+        default: "Ask us directly"
+    contactLink:
+        type: url
+        label: Contact link
+        default: "mailto:hello@reply.support"
+    items:
+        type: repeater
+        label: Questions
+        source: faqs
+        add_button_label: "Add question"
+        item_label: question
+        sub_fields:
+            question:
+                type: text
+                label: Question
+                default: "A new question"
+            answer:
+                type: textarea
+                label: Answer
+                rows: 5
+                default: "A straight answer, in the same voice as the rest of the page."

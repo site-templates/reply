@@ -1,0 +1,35 @@
+# The testimonial wall. Deliberately uneven — vary the quote lengths and let
+# the CSS columns fall where they fall. Six padded-to-match cards is the tell
+# that nobody actually said any of it.
+title: Quote wall
+description: A masonry column of customer quotes
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "In their words"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "What changed, according to the people it changed for."
+    items:
+        type: repeater
+        label: Quotes
+        source: quotes
+        add_button_label: "Add quote"
+        item_label: name
+        sub_fields:
+            quote:
+                type: textarea
+                label: Quote
+                rows: 4
+                default: "Something specific somebody actually said."
+            name:
+                type: text
+                label: Name
+                default: "Their name"
+            role:
+                type: text
+                label: Role and company
+                default: "Their role, Their company"

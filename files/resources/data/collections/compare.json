@@ -1,0 +1,10 @@
+[
+    { "feature": "Resolutions included", "solo": "100 / month", "team": "2,000 / month", "scale": "Unlimited" },
+    { "feature": "Channels", "solo": "One", "team": "All", "scale": "All, multi-brand" },
+    { "feature": "Knowledge sources", "solo": "Help centre", "team": "Docs, tickets, uploads", "scale": "Everything, plus APIs" },
+    { "feature": "Auto-triage and routing", "solo": "—", "team": "Included", "scale": "Included" },
+    { "feature": "Reporting", "solo": "Weekly digest", "team": "Live dashboards", "scale": "Live, plus scheduled exports" },
+    { "feature": "SSO and audit log", "solo": "—", "team": "—", "scale": "Included" },
+    { "feature": "Data residency", "solo": "—", "team": "—", "scale": "EU, US, or AU" },
+    { "feature": "Support", "solo": "Email", "team": "Priority, 4-hour", "scale": "Named contact, 1-hour" }
+]

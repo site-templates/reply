@@ -1,0 +1,669 @@
+/*
+    Reply — semantic aliases, the display scale, and the motion system.
+
+    Loaded by @vite right after theme.css, so everything here reaches every
+    page. The tokens below become real Tailwind utilities: bg-canvas, text-ink,
+    text-muted, border-line, bg-panel, bg-accent, text-accent-ink, and so on.
+    Every colour traces back to a theme token, so swapping the palette in the
+    builder's Theme panel restyles the entire site — there is not one literal
+    colour value in this file or in the markup.
+
+    The design idea worth protecting: Reply's canvas is a barely-there cream
+    and its accent is the ink itself. ALL the colour on the page comes from the
+    painterly field photography. Resist adding a brand hue.
+*/
+
+@theme {
+    /* Surfaces, from the page outward. */
+    --color-canvas: var(--background);
+    --color-panel: var(--card);
+    --color-raised: var(--secondary);
+    --color-line: var(--border);
+
+    /* A hairline softer than --border, for rules inside a panel. */
+    --color-hairline: color-mix(in oklab, var(--foreground) 8%, transparent);
+
+    /* Text, in three tiers. */
+    --color-ink: var(--foreground);
+    --color-muted: var(--muted-foreground);
+    --color-faint: color-mix(in oklab, var(--muted-foreground) 58%, var(--background));
+
+    /*
+        The accent. In Reply's native Linen palette the accent IS the ink, so
+        the primary button is a near-black pill on cream. Under a coloured
+        palette (ocean, rose, forest…) it becomes that hue and everything
+        follows without a markup change.
+    */
+    --color-accent: var(--primary);
+    --color-accent-ink: var(--primary-foreground);
+
+    /*
+        Hover mixes the accent TOWARD the canvas rather than the foreground:
+        when accent == ink (Linen) mixing toward the foreground would be a
+        no-op and the button would look dead. This always moves.
+    */
+    --color-accent-hover: color-mix(in oklab, var(--primary) 86%, var(--background));
+    --color-accent-soft: color-mix(in oklab, var(--primary) 9%, var(--background));
+
+    /*
+        The ink band — the one dark moment on the page. Its own text tiers,
+        derived from the canvas so they invert correctly on a dark palette
+        (where ink is light and canvas is dark, the band simply flips).
+    */
+    --color-ink-soft: color-mix(in oklab, var(--background) 7%, var(--foreground));
+    --color-ink-line: color-mix(in oklab, var(--background) 16%, var(--foreground));
+    --color-ink-muted: color-mix(in oklab, var(--background) 64%, var(--foreground));
+
+    /* An accent that still reads when it sits ON the ink band. */
+    --color-accent-lift: color-mix(in oklab, var(--primary) 55%, var(--background));
+
+    /* One easing family for everything interactive. */
+    --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cross-page navigation fades — the site reads as one continuous surface. */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-timing-function: ease;
+}
+
+html {
+    background-color: var(--color-canvas);
+}
+
+/* One stray wide element must never give the whole page a sideways scroll. */
+body {
+    overflow-x: clip;
+}
+
+::selection {
+    background-color: var(--color-ink);
+    color: var(--color-canvas);
+}
+
+/*
+    Focus rides --ring straight from theme.css, which every palette tunes for
+    legibility. It must NOT go through an @theme alias: Tailwind drops theme
+    variables no utility references, and the outline would silently fall back
+    to currentColor — invisible on the ink band.
+*/
+:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/*
+    THE DISPLAY SCALE
+    Four steps, fluid between a phone and a wide desktop. Fraunces is an
+    old-style serif with real optical sizing, so the big steps are set tight
+    and the small ones stay open.
+*/
+.display-hero {
+    font-size: clamp(2.75rem, 5.4vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+}
+
+.display-section {
+    font-size: clamp(2rem, 3.6vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+
+.display-card {
+    font-size: clamp(1.25rem, 1.6vw, 1.4375rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+}
+
+.display-figure {
+    font-size: clamp(2.75rem, 4.4vw, 3.75rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Body copy that sits under a heading — one step up from the base size. */
+.lede {
+    font-size: clamp(1.0625rem, 1.15vw, 1.1875rem);
+    line-height: 1.62;
+}
+
+/* The eyebrow: a small ink dash, then a wide-tracked label. */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    /* Often a flex child in a tall row; without this the inline-flex box
+       stretches and centres its own text vertically. */
+    align-self: flex-start;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: '';
+    width: 1.125rem;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 0.55;
+    flex: none;
+}
+
+/*
+    THE PAINTERLY FRAME — every field photograph on the site sits inside one.
+
+    A cream mat with a hairline ring, the image inset and rounded within it.
+    It is what makes the photography read as a framed print rather than a
+    stock hero, and it is the reason the site can carry saturated imagery on
+    top of an almost-white canvas without looking noisy.
+*/
+.frame {
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    background: color-mix(in oklab, var(--color-panel) 82%, transparent);
+    box-shadow:
+        0 1px 2px color-mix(in oklab, var(--color-ink) 6%, transparent),
+        0 24px 60px -32px color-mix(in oklab, var(--color-ink) 32%, transparent);
+    backdrop-filter: blur(6px);
+}
+
+.frame > * {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/*
+    THE INBOX CANVAS — Reply's signature.
+
+    A complete help-desk interface drawn in markup and tokens, floating over a
+    painterly field. Never a screenshot: it stays sharp at every size, weighs
+    nothing, and every palette swap restyles it. The glass comes from a
+    translucent panel over the photograph, so the field shows through at the
+    edges the way light does through a window.
+*/
+.canvas-glass {
+    background: color-mix(in oklab, var(--color-panel) 88%, transparent);
+    backdrop-filter: blur(20px) saturate(1.1);
+    box-shadow:
+        0 1px 0 color-mix(in oklab, var(--color-panel) 60%, transparent) inset,
+        0 30px 70px -34px color-mix(in oklab, var(--color-ink) 45%, transparent);
+}
+
+/* The conversation rows highlight on hover so the mock feels alive. */
+.thread-row {
+    transition: background-color 0.2s ease;
+}
+
+.thread-row:hover {
+    background-color: color-mix(in oklab, var(--color-ink) 4%, transparent);
+}
+
+/*
+    THE RESOLUTION TICKER — the second signature.
+
+    On the ink band a customer question types itself in, Reply's answer rises
+    in behind it, and a "resolved" stamp lands. main.js adds .is-running when
+    the band scrolls into view, so the sequence is never half-finished on
+    arrival.
+
+    Every hidden state is gated on .js (set by main.js before first paint):
+    with JavaScript off the whole conversation is simply there, in full.
+*/
+.js .ticker-stage {
+    opacity: 0;
+    translate: 0 8px;
+}
+
+.js .is-running .ticker-stage {
+    animation: ticker-in 0.5s var(--ease-spring) forwards;
+    animation-delay: var(--stage-delay, 0ms);
+}
+
+@keyframes ticker-in {
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/*
+    The typed line. Revealed with clip-path rather than an animated width:
+    width would resolve against the paragraph rather than the text, which
+    pushes everything after it onto its own line halfway through.
+*/
+.ticker-type {
+    display: inline-block;
+}
+
+.js .ticker-type {
+    clip-path: inset(0 100% 0 0);
+}
+
+.js .is-running .ticker-type {
+    animation: ticker-typing 1.4s steps(34, end) forwards;
+    animation-delay: var(--stage-delay, 0ms);
+}
+
+@keyframes ticker-typing {
+    to { clip-path: inset(0 -0.12em 0 0); }
+}
+
+/* The "resolved in 4s" stamp lands last, with a small settle. */
+.js .ticker-stamp {
+    opacity: 0;
+}
+
+.js .is-running .ticker-stamp {
+    animation: ticker-stamp 0.6s var(--ease-spring) forwards;
+    animation-delay: var(--stage-delay, 0ms);
+}
+
+@keyframes ticker-stamp {
+    from {
+        opacity: 0;
+        scale: 0.94;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/*
+    THE REVEAL SYSTEM
+    main.js adds .js to <html> before first paint, then an IntersectionObserver
+    flips .is-visible as each [data-reveal] scrolls into view. Without
+    JavaScript nothing is ever hidden. Stagger a group with the delay classes.
+*/
+.js [data-reveal] {
+    opacity: 0;
+    translate: 0 16px;
+    transition:
+        opacity 0.7s var(--ease-spring),
+        translate 0.7s var(--ease-spring);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal].is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.reveal-1 { --reveal-delay: 70ms; }
+.reveal-2 { --reveal-delay: 140ms; }
+.reveal-3 { --reveal-delay: 210ms; }
+.reveal-4 { --reveal-delay: 280ms; }
+.reveal-5 { --reveal-delay: 350ms; }
+
+/* The client marquee — the track holds the row twice for a seamless loop. */
+.marquee {
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee-track {
+    width: max-content;
+    animation: marquee-slide 46s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Cards that lift a hair and firm up their hairline under the cursor. */
+.lift {
+    transition:
+        translate 0.3s var(--ease-quart),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.lift:hover {
+    translate: 0 -3px;
+    border-color: color-mix(in oklab, var(--color-ink) 22%, var(--color-line));
+    box-shadow: 0 18px 40px -28px color-mix(in oklab, var(--color-ink) 40%, transparent);
+}
+
+/* The header gains a hairline and a wash of canvas once the page scrolls. */
+#header {
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+#header[data-scrolled] {
+    background-color: color-mix(in oklab, var(--color-canvas) 82%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom-color: var(--color-line);
+}
+
+/* The mobile menu slides down out of the header. */
+[data-menu-panel] {
+    opacity: 0;
+    translate: 0 -8px;
+    visibility: hidden;
+    transition:
+        opacity 0.24s var(--ease-quart),
+        translate 0.24s var(--ease-quart),
+        visibility 0s linear 0.24s;
+}
+
+.menu-open [data-menu-panel] {
+    opacity: 1;
+    translate: 0 0;
+    visibility: visible;
+    transition:
+        opacity 0.28s var(--ease-quart),
+        translate 0.28s var(--ease-quart),
+        visibility 0s;
+}
+
+/* The three-bar glyph folds into an X while the menu is open. */
+.menu-glyph {
+    position: relative;
+    display: block;
+    width: 1.125rem;
+    height: 0.625rem;
+    flex: none;
+}
+
+.menu-bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    border-radius: 1px;
+    background: currentColor;
+    transition:
+        translate 0.28s var(--ease-quart),
+        rotate 0.28s var(--ease-quart),
+        opacity 0.18s linear;
+}
+
+.menu-bar:nth-child(1) { top: 0; }
+.menu-bar:nth-child(2) { top: calc(50% - 0.75px); }
+.menu-bar:nth-child(3) { bottom: 0; }
+
+.menu-open .menu-bar:nth-child(1) {
+    translate: 0 calc(0.3125rem - 0.75px);
+    rotate: 45deg;
+}
+
+.menu-open .menu-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .menu-bar:nth-child(3) {
+    translate: 0 calc(-0.3125rem + 0.75px);
+    rotate: -45deg;
+}
+
+/* Underline that grows from the left on nav links. */
+.nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    height: 1.5px;
+    width: 100%;
+    border-radius: 2px;
+    background: currentColor;
+    scale: 0 1;
+    transform-origin: left;
+    transition: scale 0.25s var(--ease-quart);
+}
+
+.nav-link:hover::after,
+.nav-link[data-current]::after {
+    scale: 1 1;
+}
+
+/* Smooth <details> opening for the FAQ (Chrome; harmless elsewhere). */
+details.faq-item {
+    interpolate-size: allow-keywords;
+}
+
+details.faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+        block-size 0.35s var(--ease-quart),
+        content-visibility 0.35s;
+    transition-behavior: allow-discrete;
+}
+
+details.faq-item[open]::details-content {
+    block-size: auto;
+}
+
+details.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+details.faq-item[open] .faq-sign {
+    rotate: 45deg;
+}
+
+.faq-sign {
+    transition: rotate 0.3s var(--ease-quart);
+}
+
+/*
+    The pricing toggle is one checkbox and :has() — no JavaScript. Checked
+    slides the knob and swaps which price is visible. :has() is used rather
+    than a sibling combinator because the prices sit deep inside the cards.
+*/
+.term-knob {
+    transition: translate 0.25s var(--ease-quart);
+}
+
+.term-yearly {
+    display: none;
+}
+
+.pricing:has(#term:checked) .term-knob {
+    translate: 1.5rem 0;
+}
+
+.pricing:has(#term:checked) .term-monthly {
+    display: none;
+}
+
+.pricing:has(#term:checked) .term-yearly {
+    display: inline;
+}
+
+/*
+    Long-form typography for customer stories, tuned for the cream canvas.
+    Applied via class="prose" on the article body.
+*/
+.prose {
+    color: color-mix(in oklab, var(--color-ink) 82%, transparent);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    max-width: 68ch;
+}
+
+.prose > * + * {
+    margin-top: 1.5em;
+}
+
+.prose h2 {
+    margin-top: 2.4em;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 1.625rem;
+    line-height: 1.22;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.prose h3 {
+    margin-top: 2em;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+.prose p.lead {
+    color: var(--color-ink);
+    font-size: 1.3125rem;
+    line-height: 1.58;
+    letter-spacing: -0.008em;
+}
+
+.prose a {
+    color: var(--color-ink);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--color-ink) 35%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.prose a:hover {
+    text-decoration-color: var(--color-ink);
+}
+
+.prose strong {
+    color: var(--color-ink);
+    font-weight: 600;
+}
+
+.prose ul,
+.prose ol {
+    padding-left: 1.35em;
+}
+
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+
+.prose li {
+    margin-top: 0.5em;
+    padding-left: 0.25em;
+}
+
+.prose li::marker {
+    color: var(--color-faint);
+}
+
+.prose blockquote {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-left: 2px solid var(--color-ink);
+    padding-left: 1.5em;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1.42;
+    letter-spacing: -0.015em;
+}
+
+.prose blockquote cite {
+    display: block;
+    margin-top: 0.9em;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-style: normal;
+    letter-spacing: 0;
+    color: var(--color-muted);
+}
+
+.prose hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    border: 0;
+    border-top: 1px solid var(--color-line);
+}
+
+.prose img {
+    border-radius: 1rem;
+}
+
+.prose figcaption {
+    margin-top: 0.85em;
+    font-size: 0.8125rem;
+    color: var(--color-faint);
+}
+
+/*
+    Motion is a garnish, never a requirement. Everything above resolves to its
+    finished state when the visitor asks for reduced motion — including the
+    ticker, which must read as a completed conversation rather than an empty
+    band.
+*/
+@media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] {
+        opacity: 1;
+        translate: 0 0;
+        transition: none;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+
+    .marquee-track {
+        animation: none;
+    }
+
+    .lift:hover {
+        translate: 0 0;
+    }
+
+    .js .ticker-stage,
+    .js .is-running .ticker-stage {
+        opacity: 1;
+        translate: 0 0;
+        animation: none;
+    }
+
+    .js .ticker-type,
+    .js .is-running .ticker-type {
+        clip-path: none;
+        animation: none;
+    }
+
+    .js .ticker-stamp,
+    .js .is-running .ticker-stamp {
+        opacity: 1;
+        scale: 1;
+        animation: none;
+    }
+
+    .nav-link::after {
+        transition: none;
+    }
+
+    .menu-bar,
+    [data-menu-panel],
+    .faq-sign,
+    .term-knob {
+        transition-duration: 0.01ms;
+    }
+}

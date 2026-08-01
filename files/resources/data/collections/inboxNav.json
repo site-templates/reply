@@ -1,0 +1,7 @@
+[
+    { "label": "Inbox", "icon": "inbox", "active": "1", "badge": "3" },
+    { "label": "Tickets", "icon": "ticket", "active": "", "badge": "" },
+    { "label": "Knowledge", "icon": "book", "active": "", "badge": "" },
+    { "label": "Insights", "icon": "chart", "active": "", "badge": "" },
+    { "label": "Settings", "icon": "gear", "active": "", "badge": "" }
+]

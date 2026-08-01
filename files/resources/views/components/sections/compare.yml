@@ -1,0 +1,49 @@
+# The plan comparison table. The three column headings here must match the
+# plan names above it, or the page contradicts itself.
+title: Comparison table
+description: A four-column table of what each plan includes
+fields:
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "The whole thing, side by side."
+    featureLabel:
+        type: text
+        label: First column heading
+        default: "Feature"
+    columnOne:
+        type: text
+        label: Second column heading
+        default: "Solo"
+    columnTwo:
+        type: text
+        label: Third column heading
+        default: "Team"
+    columnThree:
+        type: text
+        label: Fourth column heading
+        default: "Scale"
+    items:
+        type: repeater
+        label: Rows
+        source: compare
+        add_button_label: "Add row"
+        item_label: feature
+        sub_fields:
+            feature:
+                type: text
+                label: Feature
+                default: "A new row"
+            solo:
+                type: text
+                label: Second column
+                default: "—"
+            team:
+                type: text
+                label: Third column
+                default: "Included"
+            scale:
+                type: text
+                label: Fourth column
+                default: "Included"

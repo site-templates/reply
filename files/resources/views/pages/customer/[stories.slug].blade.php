@@ -1,0 +1,16 @@
+<x-layouts.story
+    :title="$stories->title"
+    :description="$stories->description"
+    :company="$stories->company"
+    :industry="$stories->industry"
+    :dateFormatted="$stories->dateFormatted"
+    :readTime="$stories->readTime"
+    :image="$stories->image"
+    :imageAlt="$stories->imageAlt"
+    :metricFigure="$stories->metricFigure"
+    :metricLabel="$stories->metricLabel"
+    :quote="$stories->quote"
+    :quoteName="$stories->quoteName"
+    :quoteRole="$stories->quoteRole"
+    :more="$entries"
+>{!! $stories->content !!}</x-layouts.story>

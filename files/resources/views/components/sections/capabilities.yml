@@ -1,0 +1,51 @@
+# The three-up. Each card pairs a field painting with a chip that names a real
+# product moment, so the photography is doing a job rather than decorating.
+title: Three capabilities
+description: An off-centre heading block over three painterly cards
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "What Reply does"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "Three jobs, taken off your team."
+    body:
+        type: textarea
+        label: Supporting copy
+        rows: 4
+        default: "Not a bot bolted onto the side of your inbox. A teammate that reads what you have written, answers what it can, and knows exactly where its judgement runs out."
+    items:
+        type: repeater
+        label: Cards
+        source: capabilities
+        add_button_label: "Add card"
+        item_label: title
+        sub_fields:
+            title:
+                type: text
+                label: Title
+                default: "A new capability"
+            body:
+                type: textarea
+                label: Body
+                rows: 4
+                default: "One or two sentences on what this actually does for the person reading."
+            image:
+                type: image
+                label: Painting
+                default: "/images/resolve.jpg"
+            imageAlt:
+                type: text
+                label: Alt text
+                default: "A painterly meadow"
+            chipLabel:
+                type: text
+                label: Chip label
+                default: "Resolved"
+            chipDetail:
+                type: text
+                label: Chip value
+                default: "4s"
