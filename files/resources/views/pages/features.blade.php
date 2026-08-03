@@ -14,26 +14,7 @@
 
     <x-sections.use-cases :items="$useCases"/>
 
-    <x-sections.split
-        align="right"
-        eyebrow="Handovers"
-        heading="The conversation arrives already read."
-        body="When Reply steps back, your agent does not inherit a wall of scrollback. They get two lines of summary, the order and account already open, and a suggested reply to accept, edit, or throw away."
-        pointOne="Two-line summary and the full history behind it"
-        pointTwo="A draft reply your agent owns, never sends automatically"
-        pointThree="Confidence thresholds set per queue, not per workspace"
-        ctaText="See how teams use it"
-        ctaLink="/customers"
-        image="/images/escalate.jpg"
-        imageAlt="Painterly sage grasses bending in the wind"
-        cardTitle="Handover"
-        statOneFigure="3.1"
-        statOneLabel="Escalations per day"
-        statOneDelta="down from 11"
-        statTwoFigure="82%"
-        statTwoLabel="Drafts accepted"
-        statTwoDelta="edited or sent as-is"
-    />
+    <x-sections.handover-row/>
 
     <x-sections.integrations :items="$integrations"/>
 

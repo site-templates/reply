@@ -3,7 +3,7 @@
 # repeaters backed by collections, so a site owner can make the mock show their
 # own product without touching markup.
 title: Hero
-description: The headline, the two calls to action, and the markup-built inbox canvas on its painterly field
+description: The headline, the two calls to action, and the markup-built inbox canvas on its photographed field
 fields:
     showNotice:
         type: toggle
@@ -53,13 +53,13 @@ fields:
         default: "Free forever on one channel. No card, no sales call."
     image:
         type: image
-        label: Backdrop painting
+        label: Backdrop photograph
         description: The field the inbox floats on. Landscape, roughly 16:9.
         default: "/images/hero.jpg"
     imageAlt:
         type: text
         label: Backdrop alt text
-        default: "A painterly meadow of white cosmos wildflowers under a pale blue sky"
+        default: "Blue cornflowers and wild grasses in a meadow at golden hour"
     inboxTitle:
         type: text
         label: Canvas title

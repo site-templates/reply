@@ -1,8 +1,8 @@
-# The closing invitation. The painting runs the full width behind a canvas
+# The closing invitation. The photograph runs the full width behind a canvas
 # scrim — the one place on the site where the photography takes the whole
 # section rather than sitting inside a frame.
 title: Closing call to action
-description: A centred invitation over a full-bleed painting
+description: A centred invitation over a full-bleed photograph
 fields:
     heading:
         type: textarea
@@ -40,9 +40,9 @@ fields:
         default: "Set up in about ten minutes. Cancel in one click."
     image:
         type: image
-        label: Backdrop painting
-        default: "/images/bloom.jpg"
+        label: Backdrop photograph
+        default: "/images/cta.jpg"
     imageAlt:
         type: text
         label: Alt text
-        default: "A painterly stand of white wildflowers rising through sage grasses"
+        default: "A summer meadow of cornflowers at golden hour"

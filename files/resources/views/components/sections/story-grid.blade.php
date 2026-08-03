@@ -23,7 +23,7 @@
                 <a href="{{ $story->link }}" data-reveal class="reveal-{{ $loop->iteration }} group flex flex-col">
                     <span class="frame block">
                         <span class="relative block">
-                            <img src="{{ $story->image }}" alt="{{ $story->imageAlt }}" width="1100" height="821" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy">
+                            <img src="{{ $story->image }}" alt="{{ $story->imageAlt }}" width="1000" height="746" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy">
                             <span class="absolute bottom-3 left-3 inline-flex items-baseline gap-2 rounded-full bg-panel/90 px-3 py-1.5 backdrop-blur-sm">
                                 <span class="font-display text-base font-semibold tracking-tight text-ink">{{ $story->metricFigure }}</span>
                                 <span class="text-[0.6875rem] text-muted">{{ $story->metricLabel }}</span>

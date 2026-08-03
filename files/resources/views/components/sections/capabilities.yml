@@ -1,7 +1,7 @@
-# The three-up. Each card pairs a field painting with a chip that names a real
+# The three-up. Each card pairs a field photograph with a chip that names a real
 # product moment, so the photography is doing a job rather than decorating.
 title: Three capabilities
-description: An off-centre heading block over three painterly cards
+description: An off-centre heading block over three photographic cards
 fields:
     eyebrow:
         type: text
@@ -35,12 +35,12 @@ fields:
                 default: "One or two sentences on what this actually does for the person reading."
             image:
                 type: image
-                label: Painting
+                label: Photograph
                 default: "/images/resolve.jpg"
             imageAlt:
                 type: text
                 label: Alt text
-                default: "A painterly meadow"
+                default: "A meadow at golden hour"
             chipLabel:
                 type: text
                 label: Chip label

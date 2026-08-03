@@ -54,12 +54,12 @@ fields:
                 default: "The one-sentence version of what changed."
             image:
                 type: image
-                label: Painting
+                label: Photograph
                 default: "/images/resolve.jpg"
             imageAlt:
                 type: text
                 label: Alt text
-                default: "A painterly meadow"
+                default: "A meadow at golden hour"
             metricFigure:
                 type: text
                 label: Chip figure

@@ -28,6 +28,14 @@ fields:
         label: Current path
         description: Set per page from the layout — the matching link takes the underline.
         default: "/"
+    showStatus:
+        type: toggle
+        label: Show the live status chip
+        default: "1"
+    statusText:
+        type: text
+        label: Status chip text
+        default: "Answering now"
     signInText:
         type: text
         label: Sign-in text

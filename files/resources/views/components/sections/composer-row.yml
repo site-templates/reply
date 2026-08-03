@@ -1,0 +1,110 @@
+# The Draft reply product row. The screen shows one answer Reply wrote, the
+# sources behind it, and the two buttons an agent presses — keep the draft
+# short enough to read at a glance in the shot.
+title: Draft reply row
+description: The Draft reply screen on a photograph, with the argument for it opposite
+fields:
+    align:
+        type: select
+        label: Screen side
+        default: "right"
+        options:
+            left: Left
+            right: Right
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Your voice"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "It sounds like whoever wrote your help centre."
+    body:
+        type: textarea
+        label: Body
+        rows: 4
+        default: "Reply learns tone from the replies your team has already sent, not from a style guide. The result reads like your best agent on a good day — which is exactly who it learned from."
+    pointOne:
+        type: text
+        label: First bullet
+        default: "Trained on your own replies, not a generic corpus"
+    pointTwo:
+        type: text
+        label: Second bullet
+        default: "Every answer cites the document behind it"
+    pointThree:
+        type: text
+        label: Third bullet
+        description: Leave empty to show fewer.
+        default: "Flag a reply and it adjusts across the workspace"
+    showCta:
+        type: toggle
+        label: Show the link
+        default: "1"
+    ctaText:
+        type: text
+        label: Link text
+        default: "See every feature"
+    ctaLink:
+        type: url
+        label: Link
+        default: "/features"
+    image:
+        type: image
+        label: Photograph behind the screen
+        default: "/images/tone.jpg"
+    imageAlt:
+        type: text
+        label: Photograph alt text
+        default: "Pale wildflowers in soft evening light"
+    appTitle:
+        type: text
+        label: Screen title
+        default: "Draft reply"
+    appMeta:
+        type: text
+        label: Screen badge
+        default: "Tone matched"
+    customerName:
+        type: text
+        label: Customer name
+        default: "Priya Raman"
+    customerLine:
+        type: textarea
+        label: What the customer asked
+        rows: 2
+        default: "Hi! Is the walnut finish still available in the 180cm?"
+    draft:
+        type: textarea
+        label: The drafted reply
+        rows: 4
+        default: "Hi Priya — good timing. The walnut is back in the 180cm as of Tuesday, and it's the last run before we switch to the oiled finish in the autumn. Want me to hold one for you for 48 hours?"
+    toneLabel:
+        type: text
+        label: Voice row label
+        default: "Voice"
+    toneValue:
+        type: text
+        label: Voice row value
+        default: "Matches your help centre"
+    sourceLabel:
+        type: text
+        label: Sources row label
+        default: "Cited"
+    sourceOne:
+        type: text
+        label: First source
+        default: "Finishes and materials"
+    sourceTwo:
+        type: text
+        label: Second source
+        default: "Stock: SKU 4471"
+    primaryAction:
+        type: text
+        label: Primary button
+        default: "Send"
+    secondaryAction:
+        type: text
+        label: Secondary button
+        default: "Rewrite"

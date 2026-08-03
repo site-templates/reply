@@ -2,7 +2,7 @@
 # the stories collection by pages/customer/[stories.slug].blade.php, so edit
 # the story itself in the Content editor rather than here.
 title: Customer story layout
-description: The shell one customer story renders inside — header, hero painting, article, and sidebar
+description: The shell one customer story renders inside — header, hero photograph, article, and sidebar
 fields:
     title:
         type: text
@@ -31,12 +31,12 @@ fields:
         default: ""
     image:
         type: image
-        label: Header painting
+        label: Header photograph
         default: "/images/resolve.jpg"
     imageAlt:
         type: text
         label: Alt text
-        default: "A painterly meadow"
+        default: "A meadow at golden hour"
     metricFigure:
         type: text
         label: Headline figure

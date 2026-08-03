@@ -6,7 +6,7 @@
     'dateFormatted' => '',
     'readTime' => '',
     'image' => '/images/resolve.jpg',
-    'imageAlt' => 'A painterly meadow',
+    'imageAlt' => 'A meadow at golden hour',
     'metricFigure' => '',
     'metricLabel' => '',
     'quote' => '',
@@ -46,7 +46,7 @@
 
         <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
             <div class="relative overflow-hidden rounded-3xl">
-                <img src="{{ $image }}" alt="{{ $imageAlt }}" width="1100" height="821" class="aspect-[16/9] w-full object-cover" loading="eager">
+                <img src="{{ $image }}" alt="{{ $imageAlt }}" width="1000" height="746" class="aspect-[16/9] w-full object-cover" loading="eager">
                 @if ($metricFigure)
                     <span class="absolute bottom-5 left-5 inline-flex items-baseline gap-2.5 rounded-2xl bg-panel/90 px-5 py-3.5 backdrop-blur-sm">
                         <span class="font-display text-3xl font-semibold tracking-tight text-ink">{{ $metricFigure }}</span>

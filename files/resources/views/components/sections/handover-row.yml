@@ -1,0 +1,120 @@
+# The Handover product row. The shot argues that an agent inherits a decision
+# rather than a transcript, so the summary and the reason lead the screen.
+title: Handover row
+description: The Handover screen on a photograph, with the argument for it opposite
+fields:
+    align:
+        type: select
+        label: Screen side
+        default: "right"
+        options:
+            left: Left
+            right: Right
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Handovers"
+    heading:
+        type: textarea
+        label: Heading
+        rows: 2
+        default: "The conversation arrives already read."
+    body:
+        type: textarea
+        label: Body
+        rows: 4
+        default: "When Reply steps back, your agent does not inherit a wall of scrollback. They get the decision — what happened, why it stopped, and who owns it — with the whole thread one click away."
+    pointOne:
+        type: text
+        label: First bullet
+        default: "A summary and the reason it escalated"
+    pointTwo:
+        type: text
+        label: Second bullet
+        default: "A draft reply your agent owns, never sent automatically"
+    pointThree:
+        type: text
+        label: Third bullet
+        description: Leave empty to show fewer.
+        default: "Confidence thresholds set per queue, not per workspace"
+    showCta:
+        type: toggle
+        label: Show the link
+        default: "1"
+    ctaText:
+        type: text
+        label: Link text
+        default: "See how teams use it"
+    ctaLink:
+        type: url
+        label: Link
+        default: "/customers"
+    image:
+        type: image
+        label: Photograph behind the screen
+        default: "/images/escalate.jpg"
+    imageAlt:
+        type: text
+        label: Photograph alt text
+        default: "Backlit barley bending in the wind at sunset"
+    appTitle:
+        type: text
+        label: Screen title
+        default: "Handover"
+    appMeta:
+        type: text
+        label: Screen badge
+        default: "Below threshold"
+    customerInitials:
+        type: text
+        label: Customer initials
+        default: "AL"
+    customerName:
+        type: text
+        label: Customer name
+        default: "Anika Lubin"
+    customerMeta:
+        type: text
+        label: Customer meta line
+        default: "Order #2847 · third message"
+    summaryLabel:
+        type: text
+        label: Summary label
+        default: "What happened"
+    summary:
+        type: textarea
+        label: Summary
+        rows: 3
+        default: "Refund requested nine days outside the returns window. Customer has two prior orders and no previous claims."
+    reasonLabel:
+        type: text
+        label: Reason label
+        default: "Why Reply stopped"
+    reason:
+        type: text
+        label: Reason
+        default: "Policy exception — needs a person"
+    confidenceLabel:
+        type: text
+        label: Confidence label
+        default: "Confidence"
+    confidenceValue:
+        type: text
+        label: Confidence value
+        default: "41%"
+    assignedLabel:
+        type: text
+        label: Assigned label
+        default: "Assigned to"
+    assignedInitials:
+        type: text
+        label: Assignee initials
+        default: "ME"
+    assignedName:
+        type: text
+        label: Assignee name
+        default: "Maya Ellis"
+    assignedRole:
+        type: text
+        label: Assignee queue
+        default: "Returns queue"

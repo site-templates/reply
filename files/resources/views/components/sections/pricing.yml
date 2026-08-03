@@ -1,7 +1,7 @@
 # The plan cards. Exactly one plan should be marked featured — it is the only
-# card that carries a painting, and two of them cancels the point.
+# card that carries a photograph, and two of them cancels the point.
 title: Pricing plans
-description: A no-JavaScript billing toggle over three plan cards, the featured one carrying a painting
+description: A no-JavaScript billing toggle over three plan cards, the featured one carrying a photograph
 fields:
     showToggle:
         type: toggle
@@ -25,12 +25,12 @@ fields:
         default: "Includes"
     featureImage:
         type: image
-        label: Featured card painting
+        label: Featured card photograph
         default: "/images/bloom.jpg"
     featureImageAlt:
         type: text
-        label: Painting alt text
-        default: "A painterly stand of white wildflowers rising through sage grasses"
+        label: Photograph alt text
+        default: "White cosmos blooms rising through soft green stems"
     items:
         type: repeater
         label: Plans

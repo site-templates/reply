@@ -5,11 +5,11 @@
     'showToggle' => '1',
     'includesLabel' => 'Includes',
     'featureImage' => '/images/bloom.jpg',
-    'featureImageAlt' => 'A painterly stand of white wildflowers rising through sage grasses',
+    'featureImageAlt' => 'White cosmos blooms rising through soft green stems',
     'items' => [],
 ])
 <!--
-    Three plans. The featured one is the only card carrying a painting — it
+    Three plans. The featured one is the only card carrying a photograph — it
     bleeds up the right edge behind the feature list, which is what marks it
     out instead of a coloured border and a shouty badge.
 
@@ -36,8 +36,8 @@
         <div class="mt-12 grid gap-6 md:mt-14 lg:grid-cols-3">
             @foreach ($items as $plan)
                 @if ($plan->featured)
-                    <div data-reveal class="reveal-{{ $loop->iteration }} relative isolate flex flex-col overflow-hidden rounded-3xl border border-ink/20 bg-panel p-7 shadow-xl shadow-ink/10 sm:p-8">
-                        <!-- The painting is a wash along the card's foot, faded out
+                    <div data-reveal class="reveal-{{ $loop->iteration }} relative isolate flex flex-col overflow-hidden rounded-3xl border border-ink/25 bg-panel p-7 sm:p-8">
+                        <!-- The photograph is a wash along the card's foot, faded out
                              upward with a mask so it never collides with the type. -->
                         <img src="{{ $featureImage }}" alt="{{ $featureImageAlt }}" width="820" height="1235" class="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-56 w-full object-cover opacity-40 [-webkit-mask-image:linear-gradient(to_top,black,transparent)] [mask-image:linear-gradient(to_top,black,transparent)]" loading="lazy">
                         <div class="flex items-center justify-between gap-3">

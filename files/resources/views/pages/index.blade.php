@@ -11,28 +11,9 @@
 
     <x-sections.ticker/>
 
-    <x-sections.split align="left"/>
+    <x-sections.insights-row/>
 
-    <x-sections.split
-        align="right"
-        eyebrow="Your voice"
-        heading="It sounds like whoever wrote your help centre."
-        body="Reply learns tone from the replies your team has already sent, not from a style guide. The result reads like your best agent on a good day — which is exactly who it learned from."
-        pointOne="Trained on your own replies, not a generic corpus"
-        pointTwo="Every answer cites the document behind it"
-        pointThree="Flag a reply and it adjusts across the workspace"
-        ctaText="See every feature"
-        ctaLink="/features"
-        image="/images/voice.jpg"
-        imageAlt="Close-up painterly cream and blush cosmos petals"
-        cardTitle="Tone check"
-        statOneFigure="96%"
-        statOneLabel="On-brand score"
-        statOneDelta="reviewed weekly"
-        statTwoFigure="0"
-        statTwoLabel="Off-voice flags"
-        statTwoDelta="last 30 days"
-    />
+    <x-sections.composer-row/>
 
     <x-sections.metrics :items="$stats"/>
 

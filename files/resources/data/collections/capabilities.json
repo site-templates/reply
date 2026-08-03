@@ -3,7 +3,7 @@
         "title": "Answers in seconds",
         "body": "Reply resolves the questions your team answers fifty times a week — where's my order, can I change the address, how do I reset this — the minute they land.",
         "image": "/images/resolve.jpg",
-        "imageAlt": "A painterly meadow of teal and seafoam brushstrokes",
+        "imageAlt": "Dew on meadow grass at first light",
         "chipLabel": "Resolved",
         "chipDetail": "4s"
     },
@@ -11,7 +11,7 @@
         "title": "Learns from what you've written",
         "body": "It reads your help centre and every ticket you have ever closed. Nothing to label, no flows to draw, no six-week onboarding.",
         "image": "/images/voice.jpg",
-        "imageAlt": "Close-up painterly cream and blush cosmos petals",
+        "imageAlt": "White cosmos blooms in soft overcast light",
         "chipLabel": "Sources",
         "chipDetail": "312 docs"
     },
@@ -19,7 +19,7 @@
         "title": "Knows when to step back",
         "body": "Anything angry, unusual, or expensive goes to a person — with the thread summarised, the account open, and a draft already waiting.",
         "image": "/images/escalate.jpg",
-        "imageAlt": "Painterly sage grasses bending in the wind",
+        "imageAlt": "Backlit barley bending in the wind at sunset",
         "chipLabel": "Handed to",
         "chipDetail": "Maya"
     }

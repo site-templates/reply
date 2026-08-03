@@ -5,7 +5,7 @@
     'items' => [],
 ])
 <!--
-    Three painterly cards. Each is a field photograph with a small floating
+    Three photographic cards. Each is a field photograph with a small floating
     chip on it — the chip is what stops the images reading as decoration and
     ties them back to the product. Heading block is left-aligned against a
     right-hand paragraph, so the section does not centre like every other
@@ -27,7 +27,7 @@
                 <div data-reveal class="reveal-{{ $loop->iteration }}">
                     <div class="frame">
                         <div class="relative">
-                            <img src="{{ $item->image }}" alt="{{ $item->imageAlt }}" width="1100" height="821" class="aspect-[4/3] w-full object-cover" loading="lazy">
+                            <img src="{{ $item->image }}" alt="{{ $item->imageAlt }}" width="1000" height="746" class="aspect-[4/3] w-full object-cover" loading="lazy">
                             <span class="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-panel/90 px-3 py-1.5 text-[0.6875rem] font-medium text-ink backdrop-blur-sm">
                                 <span class="text-faint">{{ $item->chipLabel }}</span>
                                 <span class="font-semibold">{{ $item->chipDetail }}</span>

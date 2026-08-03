@@ -10,7 +10,7 @@
 
     The design idea worth protecting: Reply's canvas is a barely-there cream
     and its accent is the ink itself. ALL the colour on the page comes from the
-    painterly field photography. Resist adding a brand hue.
+    field photography. Resist adding a brand hue.
 */
 
 @theme {
@@ -161,43 +161,64 @@ body {
 }
 
 /*
-    THE PAINTERLY FRAME — every field photograph on the site sits inside one.
+    THE FRAME — every photograph on the site sits inside one.
 
-    A cream mat with a hairline ring, the image inset and rounded within it.
-    It is what makes the photography read as a framed print rather than a
-    stock hero, and it is the reason the site can carry saturated imagery on
-    top of an almost-white canvas without looking noisy.
+    Edge to edge, one hairline, and a whisper of film grain. There is not a
+    single drop shadow on this site: depth comes from hairlines, tone, and the
+    glass over the photography. The earlier version matted each photo in cream
+    like a polaroid, which read as a component library the moment the artwork
+    became real photographs rather than paintings.
 */
 .frame {
-    padding: 0.5rem;
-    border-radius: 1.5rem;
-    background: color-mix(in oklab, var(--color-panel) 82%, transparent);
-    box-shadow:
-        0 1px 2px color-mix(in oklab, var(--color-ink) 6%, transparent),
-        0 24px 60px -32px color-mix(in oklab, var(--color-ink) 32%, transparent);
-    backdrop-filter: blur(6px);
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
 }
 
 .frame > * {
-    border-radius: 1rem;
+    border-radius: inherit;
     overflow: hidden;
+}
+
+/*
+    THE GRAIN
+
+    A single tile of fractal noise laid over every photograph at very low
+    opacity. It costs nothing, it hides the smoothness that gives generated
+    imagery away, and it is the difference between a stock photo and something
+    that looks printed. Also draws the hairline, so one pseudo-element does
+    both jobs.
+*/
+.frame::after,
+.stage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 10%, transparent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 140px 140px;
+    opacity: 0.13;
+    mix-blend-mode: overlay;
 }
 
 /*
     THE INBOX CANVAS — Reply's signature.
 
     A complete help-desk interface drawn in markup and tokens, floating over a
-    painterly field. Never a screenshot: it stays sharp at every size, weighs
+    photographed field. Never a screenshot: it stays sharp at every size, weighs
     nothing, and every palette swap restyles it. The glass comes from a
     translucent panel over the photograph, so the field shows through at the
     edges the way light does through a window.
 */
 .canvas-glass {
-    background: color-mix(in oklab, var(--color-panel) 88%, transparent);
-    backdrop-filter: blur(20px) saturate(1.1);
+    background: color-mix(in oklab, var(--color-panel) 91%, transparent);
+    backdrop-filter: blur(28px) saturate(1.25);
     box-shadow:
-        0 1px 0 color-mix(in oklab, var(--color-panel) 60%, transparent) inset,
-        0 30px 70px -34px color-mix(in oklab, var(--color-ink) 45%, transparent);
+        inset 0 1px 0 color-mix(in oklab, var(--color-panel) 85%, transparent),
+        inset 0 0 0 1px color-mix(in oklab, var(--color-panel) 45%, transparent);
 }
 
 /* The conversation rows highlight on hover so the mock feels alive. */
@@ -281,6 +302,25 @@ body {
 }
 
 /*
+    THE CLOSING SCRIM
+
+    A flat wash over the closing photograph would have to be opaque enough for
+    the darkest part of the frame, which kills the picture. This is a radial
+    instead: nearly solid where the type sits, thinning to almost nothing at
+    the edges, so the meadow reads and the copy still clears contrast over the
+    dark green corners. Mixed from the canvas token, so on a dark palette it
+    darkens rather than lightens and the section keeps working.
+*/
+.cta-scrim {
+    background: radial-gradient(
+        120% 95% at 50% 48%,
+        color-mix(in oklab, var(--color-canvas) 93%, transparent) 0%,
+        color-mix(in oklab, var(--color-canvas) 82%, transparent) 42%,
+        color-mix(in oklab, var(--color-canvas) 55%, transparent) 100%
+    );
+}
+
+/*
     THE REVEAL SYSTEM
     main.js adds .js to <html> before first paint, then an IntersectionObserver
     flips .is-visible as each [data-reveal] scrolls into view. Without
@@ -331,27 +371,83 @@ body {
     transition:
         translate 0.3s var(--ease-quart),
         border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        background-color 0.3s ease;
 }
 
 .lift:hover {
     translate: 0 -3px;
     border-color: color-mix(in oklab, var(--color-ink) 22%, var(--color-line));
-    box-shadow: 0 18px 40px -28px color-mix(in oklab, var(--color-ink) 40%, transparent);
 }
 
-/* The header gains a hairline and a wash of canvas once the page scrolls. */
-#header {
+/*
+    THE HEADER CAPSULE
+
+    A floating pane of glass rather than a bar welded to the top edge, and it
+    tightens by half a container as the page scrolls — a small, continuous
+    signal that you are moving through the page.
+*/
+.header-shell {
+    max-width: 76rem;
+    background: color-mix(in oklab, var(--color-panel) 68%, transparent);
+    backdrop-filter: blur(18px) saturate(1.4);
+    border: 1px solid color-mix(in oklab, var(--color-ink) 6%, transparent);
     transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease;
-    border-bottom: 1px solid transparent;
+        max-width 0.5s var(--ease-quart),
+        background-color 0.35s ease,
+        border-color 0.35s ease;
 }
 
-#header[data-scrolled] {
-    background-color: color-mix(in oklab, var(--color-canvas) 82%, transparent);
-    backdrop-filter: blur(14px);
-    border-bottom-color: var(--color-line);
+#header[data-scrolled] .header-shell {
+    max-width: 68rem;
+    background: color-mix(in oklab, var(--color-panel) 88%, transparent);
+    border-color: var(--color-line);
+}
+
+/*
+    The wordmark's three dots run a typing sequence on hover. The mark is a
+    speech bubble mid-reply, so the animation is the logo explaining itself.
+    The dots are punched in the canvas colour, taken straight from theme.css
+    rather than an @theme alias — Tailwind drops theme variables no utility
+    references, and these are set in an attribute, not a class.
+*/
+.brand-dot {
+    fill: var(--background);
+}
+
+.brand:hover .brand-dot {
+    animation: brand-type 1.15s ease-in-out infinite;
+}
+
+.brand:hover .brand-dot:nth-of-type(2) { animation-delay: 0.14s; }
+.brand:hover .brand-dot:nth-of-type(3) { animation-delay: 0.28s; }
+
+@keyframes brand-type {
+    0%, 100% { opacity: 1; }
+    45% { opacity: 0.35; }
+}
+
+/* The live status chip — a dot with one slow outward pulse. */
+.status-pip {
+    position: relative;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    flex: none;
+    border-radius: 9999px;
+    background: var(--color-ink);
+}
+
+.status-pip::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--color-ink);
+    animation: pip-pulse 2.6s var(--ease-quart) infinite;
+}
+
+@keyframes pip-pulse {
+    0% { opacity: 0.45; scale: 1; }
+    100% { opacity: 0; scale: 2.8; }
 }
 
 /* The mobile menu slides down out of the header. */
@@ -657,6 +753,19 @@ details.faq-item[open] .faq-sign {
     }
 
     .nav-link::after {
+        transition: none;
+    }
+
+    .brand:hover .brand-dot,
+    .status-pip::after {
+        animation: none;
+    }
+
+    .status-pip::after {
+        opacity: 0;
+    }
+
+    .header-shell {
         transition: none;
     }
 

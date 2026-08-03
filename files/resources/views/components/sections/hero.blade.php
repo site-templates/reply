@@ -11,7 +11,7 @@
     'secondaryLink' => '/features',
     'footnote' => 'Free forever on one channel. No card, no sales call.',
     'image' => '/images/hero.jpg',
-    'imageAlt' => 'A painterly meadow of white cosmos wildflowers under a pale blue sky',
+    'imageAlt' => 'Blue cornflowers and wild grasses in a meadow at golden hour',
     'inboxTitle' => 'Inbox',
     'searchPlaceholder' => 'Search conversations',
     'threadSubject' => 'Order #2847 · Replacement',
@@ -27,9 +27,9 @@
 
     The interface on the right is drawn entirely in markup and theme tokens:
     no screenshot, so it stays sharp at any size, weighs nothing, and every
-    palette swap restyles it. It floats on a painterly field inside the shared
-    .frame mat, which is what lets saturated photography sit on an almost-white
-    canvas without shouting.
+    palette swap restyles it. It floats on a real photograph of a meadow at
+    golden hour, which is what lets the cream page carry saturated imagery
+    without the two fighting.
 
     The canvas sheds columns as the viewport narrows — the rail goes first,
     then the conversation list — so a phone gets the conversation itself rather
@@ -60,11 +60,11 @@
         </div>
 
         <!-- The canvas runs past the container's right edge on wide screens.
-             The painting is the frame here — no mat — so the field reads as a
+             The photograph is the frame here — no mat — so the field reads as a
              window the interface is floating in front of. -->
         <div data-reveal class="reveal-2 lg:-mr-12 xl:-mr-24">
             <div class="relative">
-                <div class="relative isolate overflow-hidden rounded-[1.75rem] shadow-[0_40px_90px_-46px_var(--color-ink)] ring-1 ring-ink/10">
+                <div class="stage relative isolate overflow-hidden rounded-[1.75rem]">
                     <img src="{{ $image }}" alt="{{ $imageAlt }}" width="1600" height="904" class="absolute inset-0 -z-10 size-full object-cover object-top" loading="eager">
 
                     <div class="p-4 sm:p-8 lg:p-11">
