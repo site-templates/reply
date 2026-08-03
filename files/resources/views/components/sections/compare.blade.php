@@ -12,7 +12,7 @@
     into 390px is unreadable and pushes the whole page sideways.
 -->
 <section class="py-20 md:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         <h2 data-reveal class="max-w-xl font-display font-normal text-ink display-section">{{ $heading }}</h2>
 

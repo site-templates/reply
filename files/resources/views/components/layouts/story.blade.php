@@ -23,7 +23,7 @@
     <article>
 
         <header class="pb-14 pt-32 sm:pt-36 lg:pt-44">
-            <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+            <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
                 <a href="{{ $backLink }}" class="group inline-flex min-h-11 items-center gap-2 text-[0.875rem] font-medium text-muted transition-colors duration-200 hover:text-ink">
                     <svg viewBox="0 0 16 16" class="size-3.5 transition-transform duration-200 group-hover:-translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
                     {{ $backText }}
@@ -44,7 +44,7 @@
             </div>
         </header>
 
-        <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+        <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
             <div class="relative overflow-hidden rounded-3xl">
                 <img src="{{ $image }}" alt="{{ $imageAlt }}" width="1000" height="746" class="aspect-[16/9] w-full object-cover" loading="eager">
                 @if ($metricFigure)
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="mx-auto w-full max-w-[78rem] px-5 py-16 sm:px-8 md:py-20 lg:px-12">
+        <div class="mx-auto w-full max-w-5xl px-5 py-16 sm:px-8 md:py-20">
             <div class="grid gap-12 lg:grid-cols-[minmax(0,2.2fr)_minmax(0,1fr)] lg:gap-20">
 
                 <div class="prose">

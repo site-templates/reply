@@ -101,19 +101,20 @@ body {
 
 /*
     THE DISPLAY SCALE
-    Four steps, fluid between a phone and a wide desktop. Fraunces is an
-    old-style serif with real optical sizing, so the big steps are set tight
-    and the small ones stay open.
+    Four steps, fluid between a phone and a wide desktop, and sized for the
+    64rem measure — a hero set for a wider page breaks to five lines in this
+    column. Fraunces is an old-style serif with real optical sizing, so the big
+    steps are set tight and the small ones stay open.
 */
 .display-hero {
-    font-size: clamp(2.75rem, 5.4vw, 4.5rem);
-    line-height: 1.02;
+    font-size: clamp(2.5rem, 4.2vw, 3.625rem);
+    line-height: 1.05;
     letter-spacing: -0.025em;
 }
 
 .display-section {
-    font-size: clamp(2rem, 3.6vw, 3.25rem);
-    line-height: 1.08;
+    font-size: clamp(1.875rem, 3.1vw, 2.875rem);
+    line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
@@ -158,6 +159,27 @@ body {
     background: currentColor;
     opacity: 0.55;
     flex: none;
+}
+
+/*
+    THE MEASURE
+
+    One 64rem column runs the whole site — sections, the footer, and the header
+    capsule all start and stop on it. These two utilities put a section's text
+    on that same line while its artwork carries on to the viewport edge, which
+    is how a row breaks the container without looking like it escaped.
+*/
+.gutter-left {
+    padding-left: max(1.25rem, calc((100vw - 64rem) / 2));
+}
+
+.gutter-right {
+    padding-right: max(1.25rem, calc((100vw - 64rem) / 2));
+}
+
+@media (min-width: 640px) {
+    .gutter-left { padding-left: max(2rem, calc((100vw - 64rem) / 2)); }
+    .gutter-right { padding-right: max(2rem, calc((100vw - 64rem) / 2)); }
 }
 
 /*
@@ -380,38 +402,139 @@ body {
 }
 
 /*
-    THE HEADER CAPSULE
+    THE HEADER
 
-    A floating pane of glass rather than a bar welded to the top edge, and it
-    tightens by half a container as the page scrolls — a small, continuous
-    signal that you are moving through the page.
+    Two states, one set of variables. At rest the bar has no chrome at all — no
+    surface, no border — and its type sits in ink on the canvas. Once the page
+    moves, main.js sets data-scrolled and the shell condenses into a near-black
+    pill with everything inverted: canvas type, a light call to action, and a
+    faint top highlight so the pill reads as a lit object rather than a hole.
+
+    Driving it through --nav-* rather than swapping utility classes means one
+    rule inverts the whole header, the transition is a colour interpolation
+    instead of a repaint, and the palette still decides what "ink" and "canvas"
+    actually are.
 */
 .header-shell {
-    max-width: 76rem;
-    background: color-mix(in oklab, var(--color-panel) 68%, transparent);
-    backdrop-filter: blur(18px) saturate(1.4);
-    border: 1px solid color-mix(in oklab, var(--color-ink) 6%, transparent);
+    --nav-fg: var(--color-ink);
+    --nav-dim: var(--color-muted);
+    --nav-line: var(--color-line);
+    --nav-btn: var(--color-accent);
+    --nav-btn-fg: var(--color-accent-ink);
+    --nav-btn-hover: var(--color-accent-hover);
+    --nav-dot: var(--color-canvas);
+    --nav-hover-surface: color-mix(in oklab, var(--color-ink) 6%, transparent);
+
+    max-width: 64rem;
+    background: transparent;
+    box-shadow: none;
     transition:
-        max-width 0.5s var(--ease-quart),
-        background-color 0.35s ease,
-        border-color 0.35s ease;
+        max-width 0.55s var(--ease-quart),
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 #header[data-scrolled] .header-shell {
-    max-width: 68rem;
-    background: color-mix(in oklab, var(--color-panel) 88%, transparent);
-    border-color: var(--color-line);
+    --nav-fg: var(--color-canvas);
+    --nav-dim: color-mix(in oklab, var(--color-canvas) 58%, var(--color-ink));
+    --nav-line: color-mix(in oklab, var(--color-canvas) 20%, transparent);
+    --nav-btn: var(--color-canvas);
+    --nav-btn-fg: var(--color-ink);
+    --nav-btn-hover: color-mix(in oklab, var(--color-canvas) 86%, var(--color-ink));
+    --nav-dot: var(--color-ink);
+    --nav-hover-surface: color-mix(in oklab, var(--color-canvas) 12%, transparent);
+
+    max-width: 58rem;
+    background: color-mix(in oklab, var(--color-ink) 96%, var(--color-canvas));
+    box-shadow:
+        inset 0 1px 0 color-mix(in oklab, var(--color-canvas) 16%, transparent),
+        inset 0 0 0 1px color-mix(in oklab, var(--color-canvas) 10%, transparent);
+}
+
+/* Everything in the bar reads its colour from the two variables above. */
+.nav-fg {
+    color: var(--nav-fg);
+    transition: color 0.4s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-dim {
+    color: var(--nav-dim);
+    transition: color 0.25s ease, background-color 0.2s ease;
+}
+
+.nav-dim:hover {
+    color: var(--nav-fg);
+}
+
+.brand:hover {
+    opacity: 0.72;
+}
+
+.nav-fg:is(button):hover {
+    background-color: var(--nav-hover-surface);
 }
 
 /*
-    The wordmark's three dots run a typing sequence on hover. The mark is a
-    speech bubble mid-reply, so the animation is the logo explaining itself.
-    The dots are punched in the canvas colour, taken straight from theme.css
-    rather than an @theme alias — Tailwind drops theme variables no utility
-    references, and these are set in an attribute, not a class.
+    The status chip belongs to the resting state. As the bar condenses it
+    collapses out rather than staying and colliding with the centred nav —
+    the whole point of the scrolled state is that it carries less.
+*/
+.nav-chip {
+    max-width: 12rem;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--nav-dim);
+    border-color: var(--nav-line);
+    transition:
+        max-width 0.45s var(--ease-quart),
+        opacity 0.3s ease,
+        margin 0.45s var(--ease-quart),
+        padding 0.45s var(--ease-quart),
+        color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+#header[data-scrolled] .nav-chip {
+    max-width: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-color: transparent;
+    opacity: 0;
+}
+
+.nav-btn {
+    background-color: var(--nav-btn);
+    color: var(--nav-btn-fg);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--nav-btn-hover);
+}
+
+.nav-panel {
+    background-color: color-mix(in oklab, var(--color-panel) 96%, transparent);
+    border-color: var(--color-line);
+    backdrop-filter: blur(18px);
+}
+
+#header[data-scrolled] .nav-panel {
+    background-color: color-mix(in oklab, var(--color-ink) 96%, var(--color-canvas));
+    border-color: color-mix(in oklab, var(--color-canvas) 12%, transparent);
+}
+
+.nav-panel a:hover {
+    background-color: var(--nav-hover-surface);
+}
+
+/*
+    The wordmark's three dots run a typing sequence on hover. The dots are
+    punched in whatever the bar is sitting on, so they invert with it.
 */
 .brand-dot {
-    fill: var(--background);
+    fill: var(--nav-dot);
+    transition: fill 0.4s ease;
 }
 
 .brand:hover .brand-dot {
@@ -433,7 +556,7 @@ body {
     height: 0.4375rem;
     flex: none;
     border-radius: 9999px;
-    background: var(--color-ink);
+    background: var(--nav-dim, var(--color-ink));
 }
 
 .status-pip::after {
@@ -441,7 +564,7 @@ body {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: var(--color-ink);
+    background: var(--nav-dim, var(--color-ink));
     animation: pip-pulse 2.6s var(--ease-quart) infinite;
 }
 
@@ -761,12 +884,18 @@ details.faq-item[open] .faq-sign {
         animation: none;
     }
 
-    .status-pip::after {
-        opacity: 0;
+    .header-shell,
+    .nav-chip,
+    .nav-fg,
+    .nav-dim,
+    .nav-chip,
+    .nav-btn,
+    .brand-dot {
+        transition-duration: 0.01ms;
     }
 
-    .header-shell {
-        transition: none;
+    .status-pip::after {
+        opacity: 0;
     }
 
     .menu-bar,

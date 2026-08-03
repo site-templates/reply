@@ -20,7 +20,7 @@
     <img src="{{ $image }}" alt="{{ $imageAlt }}" width="1600" height="904" class="absolute inset-0 -z-20 size-full object-cover object-center" loading="lazy">
     <span class="cta-scrim absolute inset-0 -z-10" aria-hidden="true"></span>
 
-    <div class="mx-auto w-full max-w-[78rem] px-5 py-24 text-center sm:px-8 md:py-32 lg:px-12 lg:py-40">
+    <div class="mx-auto w-full max-w-5xl px-5 py-24 text-center sm:px-8 md:py-32 lg:py-40">
         <h2 data-reveal class="mx-auto max-w-3xl font-display font-normal text-ink display-hero">{{ $heading }}</h2>
         <p data-reveal class="reveal-1 mx-auto mt-6 max-w-lg text-ink/75 lede">{{ $body }}</p>
 

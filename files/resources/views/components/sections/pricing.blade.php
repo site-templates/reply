@@ -17,7 +17,7 @@
     works with JavaScript switched off.
 -->
 <section class="pricing py-16 md:py-20 lg:py-24">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         @if ($showToggle)
             <div class="flex justify-center">

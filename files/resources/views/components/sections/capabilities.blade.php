@@ -12,7 +12,7 @@
     three-up on the internet.
 -->
 <section class="py-20 md:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
             <div>

@@ -59,7 +59,7 @@ fields:
     imageAlt:
         type: text
         label: Backdrop alt text
-        default: "Blue cornflowers and wild grasses in a meadow at golden hour"
+        default: "White cosmos flowers against a pale blue summer sky"
     inboxTitle:
         type: text
         label: Canvas title

@@ -13,7 +13,7 @@
     centre variant is there for the pages that earn it (pricing).
 -->
 <section class="border-b border-line pb-14 pt-32 sm:pb-16 sm:pt-36 lg:pb-20 lg:pt-44">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
         @if ($align == 'center')
             <div class="mx-auto max-w-2xl text-center">
                 <p data-reveal class="eyebrow mx-auto text-muted">{{ $eyebrow }}</p>

@@ -9,7 +9,7 @@
     in the display face. It reads as a table of contents for the product.
 -->
 <section class="pb-20 pt-14 md:pb-28 md:pt-16 lg:pb-32 lg:pt-20">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         <p data-reveal class="eyebrow text-muted">{{ $eyebrow }}</p>
         <h2 data-reveal class="reveal-1 mt-5 max-w-2xl font-display font-normal text-ink display-section">{{ $heading }}</h2>

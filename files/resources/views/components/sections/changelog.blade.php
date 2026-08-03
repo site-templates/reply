@@ -11,7 +11,7 @@
     history rather than a stack of cards.
 -->
 <section class="pb-20 pt-14 md:pb-28 md:pt-16 lg:pb-32 lg:pt-20">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         @if ($showSubscribe)
             <p data-reveal class="mb-14 text-[0.9375rem] text-muted md:mb-16">

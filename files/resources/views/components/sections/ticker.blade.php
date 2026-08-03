@@ -25,7 +25,7 @@
     palette the band simply inverts along with everything else.
 -->
 <section data-ticker class="bg-ink py-20 text-canvas md:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         <div class="mx-auto max-w-2xl text-center">
             <p data-reveal class="eyebrow mx-auto text-ink-muted">{{ $eyebrow }}</p>

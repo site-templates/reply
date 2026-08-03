@@ -11,7 +11,7 @@
     'secondaryLink' => '/features',
     'footnote' => 'Free forever on one channel. No card, no sales call.',
     'image' => '/images/hero.jpg',
-    'imageAlt' => 'Blue cornflowers and wild grasses in a meadow at golden hour',
+    'imageAlt' => 'White cosmos flowers against a pale blue summer sky',
     'inboxTitle' => 'Inbox',
     'searchPlaceholder' => 'Search conversations',
     'threadSubject' => 'Order #2847 · Replacement',
@@ -36,9 +36,10 @@
     than a squashed three-pane app.
 -->
 <section class="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-28 lg:pt-40">
-    <div class="mx-auto grid w-full max-w-[78rem] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12 lg:px-12">
+    <div class="grid w-full items-center gap-14 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14 lg:px-0">
 
-        <div class="max-w-xl">
+        <div class="gutter-left lg:pr-8">
+            <div class="max-w-xl">
             @if ($showNotice)
                 <a href="{{ $noticeLink }}" data-reveal class="group inline-flex items-center gap-2.5 rounded-full border border-line bg-panel/70 py-1.5 pl-1.5 pr-4 text-sm text-muted transition-colors duration-200 hover:border-ink/25 hover:text-ink">
                     <span class="rounded-full bg-accent px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.09em] text-accent-ink">{{ $noticeLabel }}</span>
@@ -57,12 +58,13 @@
             </div>
 
             <p data-reveal class="reveal-4 mt-6 text-sm text-faint">{{ $footnote }}</p>
+            </div>
         </div>
 
         <!-- The canvas runs past the container's right edge on wide screens.
              The photograph is the frame here — no mat — so the field reads as a
              window the interface is floating in front of. -->
-        <div data-reveal class="reveal-2 lg:-mr-12 xl:-mr-24">
+        <div data-reveal class="reveal-2">
             <div class="relative">
                 <div class="stage relative isolate overflow-hidden rounded-[1.75rem]">
                     <img src="{{ $image }}" alt="{{ $imageAlt }}" width="1600" height="904" class="absolute inset-0 -z-10 size-full object-cover object-top" loading="eager">
@@ -85,7 +87,7 @@
                             <div class="flex min-h-[19rem] sm:min-h-[23rem] lg:min-h-[26rem]">
 
                                 <!-- Rail -->
-                                <nav class="hidden w-36 shrink-0 border-r border-hairline p-2 lg:block" aria-label="Inbox sections">
+                                <nav class="hidden w-32 shrink-0 border-r border-hairline p-2 lg:block" aria-label="Inbox sections">
                                     @foreach ($navItems as $item)
                                         @if ($item->active)
                                             <span class="mb-0.5 flex items-center gap-2.5 rounded-lg bg-raised px-2.5 py-2 text-[0.75rem] font-medium text-ink">
@@ -106,7 +108,7 @@
                                 </nav>
 
                                 <!-- Conversation list -->
-                                <div class="hidden w-52 shrink-0 border-r border-hairline sm:block lg:w-56">
+                                <div class="hidden w-48 shrink-0 border-r border-hairline sm:block lg:w-52">
                                     @foreach ($threads as $thread)
                                         <span class="thread-row flex items-start gap-2.5 border-b border-hairline px-3 py-2.5 last:border-b-0">
                                             <span class="mt-px flex size-6 shrink-0 items-center justify-center rounded-full bg-raised text-[0.5625rem] font-semibold tracking-wide text-muted">{{ $thread->initials }}</span>

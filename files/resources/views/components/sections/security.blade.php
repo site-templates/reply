@@ -13,7 +13,7 @@
     colours come from the canvas token, so it inverts cleanly on a dark palette.
 -->
 <section class="bg-ink py-20 text-canvas md:py-28 lg:py-32">
-    <div class="mx-auto grid w-full max-w-[78rem] gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-20 lg:px-12">
+    <div class="mx-auto grid w-full max-w-5xl gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-20">
 
         <div class="lg:sticky lg:top-28 lg:self-start">
             <p data-reveal class="eyebrow text-ink-muted">{{ $eyebrow }}</p>

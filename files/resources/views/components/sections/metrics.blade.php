@@ -13,7 +13,7 @@
     dividing, so the section stays quiet next to the ink band above it.
 -->
 <section class="py-20 md:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         <figure class="mx-auto max-w-4xl text-center">
             <blockquote data-reveal class="font-display text-[1.75rem] font-normal leading-[1.28] tracking-[-0.015em] text-ink sm:text-[2.125rem] lg:text-[2.5rem]">“{{ $quote }}”</blockquote>

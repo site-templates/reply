@@ -9,7 +9,7 @@
     quotes side by side is what makes it read as testimony rather than copy.
 -->
 <section class="py-20 md:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
         <div class="max-w-2xl">
             <p data-reveal class="eyebrow text-muted">{{ $eyebrow }}</p>

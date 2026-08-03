@@ -14,7 +14,7 @@
     easing is CSS in site.css.
 -->
 <section class="py-20 md:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-[78rem] px-5 sm:px-8 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 sm:px-8">
         <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-20">
 
             <div class="lg:sticky lg:top-28 lg:self-start">

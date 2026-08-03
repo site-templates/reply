@@ -10,7 +10,7 @@
     'note' => '© 2026 Reply. Built for people who would rather be doing something else.',
 ])
 <footer class="border-t border-line bg-canvas">
-    <div class="mx-auto w-full max-w-[78rem] px-5 py-16 sm:px-8 md:py-20 lg:px-12">
+    <div class="mx-auto w-full max-w-5xl px-5 py-16 sm:px-8 md:py-20">
 
         <div class="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))] md:gap-8">
 
